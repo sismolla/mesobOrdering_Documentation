@@ -11,12 +11,25 @@
   "navigation": {
     "tabs": [
       {
+        "tab": "Overview",
+        "groups": [
+          {
+            "group": "Product",
+            "pages": [
+              "introduction",
+              "why-mesobordering",
+              "how-it-works",
+              "pricing"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Admin Guide",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
               "quickstart",
               "admin-layout"
             ]
