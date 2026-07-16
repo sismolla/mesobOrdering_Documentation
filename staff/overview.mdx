@@ -1,0 +1,85 @@
+---
+title: "MesobOrdering Staff Guide Overview"
+sidebarTitle: "Overview"
+description: "Introduction to the MesobOrdering Staff Guide, covering Kitchen, Waiter, Cashier, and Bar Staff roles with permissions, login flow, and shared status references."
+---
+
+The Staff Guide walks non-admin staff through their day-to-day workflows in MesobOrdering. Each role has a dedicated interface tailored to its responsibilities — kitchen, service, billing, or bar.
+
+## Roles covered
+
+<CardGroup cols={2}>
+  <Card title="Kitchen Staff" icon="utensils" href="/staff/kitchen/overview">
+    Live food order queue with real-time status updates and audio alerts.
+  </Card>
+
+  <Card title="Waiter" icon="bell-concierge" href="/staff/waiter/dashboard">
+    Table management, order taking, and live guest call alerts.
+  </Card>
+
+  <Card title="Cashier" icon="credit-card" href="/staff/cashier/bills">
+    Bill processing, payment confirmation, and transaction history.
+  </Card>
+
+  <Card title="Bar Staff" icon="martini-glass" href="/staff/bar/dashboard">
+    Live drink order queue and bar performance stats.
+  </Card>
+</CardGroup>
+
+## Logging in
+
+All staff log in from a single URL and are automatically redirected to their role's default page.
+
+<Steps>
+  <Step title="Open the login page">
+    Navigate to `https://mesobordering.com/login`.
+  </Step>
+  <Step title="Enter your credentials">
+    Enter your **Email Address** and **Password** provided by your admin.
+  </Step>
+  <Step title="Click Login">
+    You'll be redirected to your role's default landing page.
+  </Step>
+</Steps>
+
+| Role | Default landing page |
+| --- | --- |
+| Kitchen | `/staff/kitchen` |
+| Waiter | `/waiter/dashboard` |
+| Cashier | `/cashier/bills` |
+| Bar | `/bar/dashboard` |
+
+<Note>
+  If your account has been paused by an admin, you'll see an **Account Paused** screen instead of your dashboard. Contact your admin to reactivate.
+</Note>
+
+## Order status reference
+
+Orders move through the same status flow across every role. Colors and meanings are consistent throughout the app.
+
+| Status | Color | Who sets it | Meaning |
+| --- | --- | --- | --- |
+| PENDING | 🔵 Blue | System (auto) | Placed by guest, not yet acknowledged |
+| PREPARING | 🟡 Yellow | Kitchen / Bar | Actively being prepared |
+| READY | 🟢 Teal | Kitchen / Bar | Ready for collection |
+| SERVED | ✅ Green | Waiter / System | Delivered to the guest |
+| CANCELLED | 🔴 Red | Staff / Admin | Order voided |
+
+## Staff navigation quick reference
+
+| Role | Page | URL |
+| --- | --- | --- |
+| Kitchen | Kitchen View | `/staff/kitchen` |
+| Waiter | Dashboard | `/waiter/dashboard` |
+| Waiter | Tables | `/waiter/tables` |
+| Waiter | Orders | `/waiter/orders` |
+| Waiter | Place Order | `/waiter/place-order` |
+| Cashier | Bills | `/cashier/bills` |
+| Cashier | History | `/cashier/history` |
+| Bar | Dashboard | `/bar/dashboard` |
+| Bar | Display | `/bar/display` |
+| Bar | History | `/bar/history` |
+
+<Note>
+  For technical or account issues, contact your hotel Admin. For system-level support, contact MesobOrdering support.
+</Note>

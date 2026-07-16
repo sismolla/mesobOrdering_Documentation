@@ -1,0 +1,77 @@
+---
+title: "Waiter Dashboard: Live Overview and Alerts"
+sidebarTitle: "Dashboard"
+description: "The MesobOrdering Waiter Dashboard shows active tables, pending orders, revenue stats, and live waiter call and overdue bill alerts."
+---
+
+**URL:** `/waiter/dashboard` **Access:** After login, or click **Dashboard** in the waiter navigation.
+
+The Waiter Dashboard is your home screen — a quick overview of your current shift.
+
+## Layout
+
+The Waiter layout has a **bottom navigation bar** (mobile) or a **left sidebar** (desktop) with these links:
+
+- **Dashboard** — Home overview
+- **Tables** — View and manage tables
+- **Orders** — View all orders
+- **Place Order** — Take a new order for a table
+
+## Overview cards
+
+**Date & Time display:** Current date and time shown prominently in the top-right corner.
+
+**Stats cards:**
+
+| Card | Icon | What it shows |
+| --- | --- | --- |
+| **Active Tables** | 🪑 | Number of tables with an active guest session |
+| **Pending Orders** | ⏳ | Orders waiting to be prepared (PENDING or PREPARING) |
+| **Today's Revenue** | 💰 | Total ETB value from completed orders today |
+| **Avg Order Value** | 📊 | Average ETB per order today |
+
+## Waiter call alerts
+
+If a guest at a table presses the **Call Waiter** button on their phone, a **yellow alert banner** instantly appears at the top of your dashboard:
+
+> 🛎️ **Table \[X\]** is calling for a waiter — "I need assistance" _\[Time of request\]_
+
+- Click the **✕** button on the right to dismiss the alert once you've attended to the guest.
+- Multiple alerts can stack if several tables call at once.
+
+**Bill Overdue Alert:** If a table has been waiting too long for their bill, a **red alert** appears:
+
+> ⏰ **Overdue Bill — Table \[X\]** — waiting **\[N\] minutes**. Process payment immediately.
+
+Click **Go to Bills →** to jump directly to the bills page.
+
+## Quick actions
+
+Four large buttons for fast navigation:
+
+- **👨‍🍳 Kitchen View** — See the kitchen order queue (with pending orders badge)
+- **🪑 Tables** — View all active tables
+- **📝 All Orders** — See all recent orders
+- **💰 Process Bills** — Jump to bill processing
+
+## Active Tables panel
+
+The left panel shows all currently occupied tables:
+
+- **Table Number** (bold)
+- **Guest count** (e.g. "3 guests")
+- **Current Total** (in ETB)
+- **ACTIVE** badge
+- **View** button — Go to the table's detail view
+- **Bill** button — Jump directly to billing for that table
+
+## Recent Orders panel
+
+The right panel shows the last 10 orders with columns:
+
+- **Order ID** (short)
+- **Table Number**
+- **Amount** (ETB)
+- **Status** badge (color-coded)
+- **View** button — See order details
+- **Start Prep** button — Appears for PENDING orders; click to move to PREPARING

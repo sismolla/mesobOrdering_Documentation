@@ -1,0 +1,81 @@
+---
+title: "Kitchen View: The Live Order Queue"
+sidebarTitle: "Kitchen View"
+description: "How to use the MesobOrdering Kitchen View — order cards, status flow, real-time WebSocket updates, and filtering the queue."
+---
+
+**URL:** `/staff/kitchen` **Layout:** Staff layout with simplified navigation
+
+The Kitchen View is a live order board showing all food orders that need to be prepared.
+
+## Page header
+
+- **Page title:** "Kitchen View" or "Kitchen"
+- **Refresh** button to reload orders manually
+- A real-time order count badge
+
+## Order cards
+
+Each incoming order is shown as a card containing:
+
+| Information | Description |
+| --- | --- |
+| **Order ID** | Short ID (e.g. #A1B2C3) for reference |
+| **Table Number** | Which table placed this order |
+| **Time** | When the order was placed (e.g. "3:45 PM") |
+| **Items List** | Each item with quantity and any special notes |
+| **Current Status** | Color-coded badge: PENDING (blue), PREPARING (yellow), READY (green) |
+| **Total Amount** | The order total in ETB |
+
+## Order status flow
+
+Orders move through these stages:
+
+```text
+PENDING → PREPARING → READY → SERVED
+```
+
+| Status | Color | Meaning |
+| --- | --- | --- |
+| **PENDING** | Blue 🔵 | Order received, not yet started |
+| **PREPARING** | Yellow 🟡 | Kitchen is actively preparing |
+| **READY** | Green 🟢 | Food is ready to be picked up/served |
+| **SERVED** | Grey | Order has been delivered to the table |
+| **CANCELLED** | Red 🔴 | Order was cancelled |
+
+## Updating an order status
+
+<Steps>
+  <Step title="Locate the order">
+    Find the order card on your screen.
+  </Step>
+  <Step title="Click the action button">
+    Click the **status button** or **action button** on the card.
+  </Step>
+  <Step title="Status syncs instantly">
+    The status changes immediately and updates for all staff in real time.
+  </Step>
+</Steps>
+
+**Common actions from the kitchen:**
+
+- Click **Start Preparing** on a PENDING order → moves it to PREPARING
+- Click **Mark Ready** on a PREPARING order → moves it to READY
+- The waiter will then collect and serve the food
+
+## Real-time updates
+
+The Kitchen View uses a **WebSocket** (live connection) to receive orders automatically. When a guest places a new order:
+
+- The order card appears on your screen **instantly** without needing to refresh
+- An **audio alert** may play to notify you of the new order
+- A count badge in the browser tab updates to show pending orders
+
+## Filtering orders
+
+Filter the kitchen queue by order status:
+
+- **All** — Shows every order
+- **Pending** — Only orders not yet started
+- **Preparing** — Only orders being actively prepared
+- **Ready** — Orders finished and waiting for collection

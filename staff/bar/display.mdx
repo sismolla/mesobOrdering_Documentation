@@ -1,0 +1,60 @@
+---
+title: "Bar Display: Live Order Queue"
+sidebarTitle: "Bar Display"
+description: "The MesobOrdering Bar Display is a live queue of beverage orders. Bar staff update statuses in real time and filter the queue."
+---
+
+**URL:** `/bar/display` **Access:** Click **Display** in the bar navigation.
+
+This is the main working screen for bar staff — a live, real-time queue of all bar orders.
+
+## Overview
+
+The Bar Display shows all orders that contain **bar department items** (beverages, cocktails, etc.). Food items go to the kitchen; bar items come here.
+
+## Order cards
+
+Each order is shown as a card with:
+
+| Field | Description |
+| --- | --- |
+| **Order ID** | Short reference number |
+| **Table Number** | Which table placed the order |
+| **Time** | When the order was placed |
+| **Bar Items** | List of drinks ordered (name \+ quantity) |
+| **Status Badge** | Color-coded: PENDING, PREPARING, READY, SERVED |
+| **Notes** | Any special instructions (e.g. "no ice", "extra mint") |
+
+## Updating bar order status
+
+Progress an order through the status flow:
+
+```text
+PENDING → PREPARING → READY → SERVED
+```
+
+<Steps>
+  <Step title="Locate the order">
+    Find the order card on the display.
+  </Step>
+  <Step title="Click the action button">
+    - **Start** or **Preparing** — Marks order as PREPARING
+    - **Ready** — Marks order as READY (waiter will come to collect)
+  </Step>
+  <Step title="Updates sync live">
+    Updates are instant and visible to all staff in real time.
+  </Step>
+</Steps>
+
+## Real-time updates
+
+Like the kitchen view, the Bar Display uses a live WebSocket connection. New bar orders appear automatically when placed by guests. An audio alert may sound for new incoming orders.
+
+## Filtering the queue
+
+Filter buttons at the top of the display:
+
+- **All** — Every bar order
+- **New** — PENDING orders only
+- **In Progress** — PREPARING orders
+- **Ready** — Orders ready to be served

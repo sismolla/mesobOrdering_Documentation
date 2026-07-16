@@ -54,6 +54,51 @@
         ]
       },
       {
+        "tab": "Staff Guide",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "staff/overview"
+            ]
+          },
+          {
+            "group": "Kitchen Staff",
+            "pages": [
+              "staff/kitchen/overview",
+              "staff/kitchen/view"
+            ]
+          },
+          {
+            "group": "Waiter",
+            "pages": [
+              "staff/waiter/overview",
+              "staff/waiter/dashboard",
+              "staff/waiter/tables",
+              "staff/waiter/orders",
+              "staff/waiter/place-order"
+            ]
+          },
+          {
+            "group": "Cashier",
+            "pages": [
+              "staff/cashier/overview",
+              "staff/cashier/bills",
+              "staff/cashier/history"
+            ]
+          },
+          {
+            "group": "Bar Staff",
+            "pages": [
+              "staff/bar/overview",
+              "staff/bar/dashboard",
+              "staff/bar/display",
+              "staff/bar/history"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Reference",
         "groups": [
           {

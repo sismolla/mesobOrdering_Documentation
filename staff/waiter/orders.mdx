@@ -1,0 +1,35 @@
+---
+title: "Tracking Orders as a Waiter"
+sidebarTitle: "Orders"
+description: "The Orders page shows every active order with color-coded status badges and quick actions to move PENDING orders into PREPARING."
+---
+
+**URL:** `/waiter/orders` **Access:** Click **Orders** in the waiter navigation.
+
+Shows all orders (for the current shift or all active orders) with full details.
+
+## Orders list
+
+Each order shows:
+
+- **Order ID** — Short reference number
+- **Table Number** — Where the order came from
+- **Items** — What was ordered (name \+ quantity)
+- **Total** — ETB amount
+- **Status** — Color-coded badge
+- **Time** — When the order was placed
+
+## Order status colors
+
+| Status | Color | Description |
+| --- | --- | --- |
+| PENDING | Blue | Just placed, not yet confirmed |
+| PREPARING | Yellow | Kitchen is working on it |
+| READY | Teal | Ready to collect and serve |
+| SERVED | Green | Delivered to the table |
+| CANCELLED | Red | Order was cancelled |
+
+## Order actions
+
+- **View** — See full order details including all items, instructions, and status history
+- **Start Prep** (on PENDING orders) — Mark the order as PREPARING

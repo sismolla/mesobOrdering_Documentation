@@ -1,0 +1,84 @@
+---
+title: "Processing Bills and Payments"
+sidebarTitle: "Bills"
+description: "Guide for cashiers to view active bills, confirm payments, handle loyalty redemptions, and cancel bills in MesobOrdering."
+---
+
+**URL:** `/cashier/bills` **Access:** Default landing page after cashier login.
+
+The Bills page is the cashier's primary workspace — showing all table sessions that have requested payment.
+
+## Layout
+
+The Cashier layout has a navigation panel with:
+
+- **Bills** — Active bills awaiting payment
+- **History** — Completed bill transactions
+
+## Active bills list
+
+Each bill is displayed as a card or row with the following information:
+
+| Field | Description |
+| --- | --- |
+| **Table Number** | Which table is requesting payment |
+| **Session ID** | A short reference for the guest's session |
+| **Items Summary** | Brief list or count of items ordered |
+| **Subtotal** | Total of all items before tax |
+| **Tax** | Calculated tax amount (based on admin-configured tax rate) |
+| **Service Charge** | Service charge if configured (%) |
+| **Grand Total** | Final amount the guest must pay (Subtotal \+ Tax \+ Service Charge) |
+| **Payment Requested At** | When the guest pressed "Request Bill" |
+| **Status** | PENDING (awaiting payment), PAID, or CANCELLED |
+
+## Reading the bill detail
+
+Click **View Bill** or the bill row to expand and see:
+
+- Full itemized list (item name, quantity, unit price, line total)
+- Applied discounts (if any loyalty reward was redeemed)
+- Any special notes from the guest
+- Tax and service charge breakdown
+
+## Processing a payment
+
+<Steps>
+  <Step title="Find the bill">
+    Locate the bill for the correct table.
+  </Step>
+  <Step title="Ask preferred payment method">
+    Show the guest the configured options, for example:
+
+    - 📱 TeleBirr — Account: 0911223344 · \[Holder Name\]
+    - 🏦 CBE — Account: 123456789 · \[Hotel Name\]
+  </Step>
+  <Step title="Collect the payment">
+    Collect via the chosen method (verify transfer/receipt if digital).
+  </Step>
+  <Step title="Confirm Payment">
+    Click **Confirm Payment** (green button) on the bill.
+
+    - A confirmation prompt may appear: "Confirm payment of ETB \[amount\]?"
+    - Select the payment method from the dropdown if prompted.
+    - Click **Confirm** to finalize.
+  </Step>
+  <Step title="Bill closes">
+    The bill status changes to **PAID** (shown with a green checkmark). The table session is now considered closed, and an entry is added to the [Bill History](/staff/cashier/history).
+  </Step>
+</Steps>
+
+## Handling loyalty redemptions
+
+If a guest is eligible for a loyalty reward (e.g. a free item from a stamp card):
+
+1. The cashier or waiter should have already redeemed the reward from the Loyalty section.
+2. The bill may show a reduced amount or free item discount.
+3. Process the remaining (reduced) total as normal.
+
+## Cancelling a bill
+
+If an order or session needs to be cancelled:
+
+1. Click the **Cancel** or **Void** button on the bill (if available for your role).
+2. Confirm the cancellation.
+3. The action is logged in the Audit system.
