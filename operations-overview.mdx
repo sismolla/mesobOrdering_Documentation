@@ -1,0 +1,87 @@
+---
+title: "Monitor Live Hotel Operations as an Admin"
+sidebarTitle: "Staff Dashboard"
+description: "The MesobOrdering Staff Dashboard gives admins a real-time view of active tables, pending orders, revenue, and waiter call alerts without switching roles."
+---
+
+The Operations section at `/staff` gives you a live window into everything happening on your floor right now. As an admin, you can observe and act on the full operational state — active tables, incoming orders, revenue metrics, and staff alerts — without switching roles or logging in as a different user. Everything your waiters and cashiers see is visible to you in one place.
+
+## Staff Dashboard Overview
+
+The Staff Dashboard is your command center. It surfaces the most time-sensitive information at the top and lets you drill into details or trigger actions without navigating away.
+
+### Real-Time Alerts Panel
+
+Two types of dismissible alert banners appear at the top of the dashboard whenever they are triggered:
+
+| Alert Type | Color | Trigger | Action Available |
+|---|---|---|---|
+| Waiter Call Alert | Yellow | A guest presses **Call Waiter** at their table | Dismiss once acknowledged |
+| Bill Overdue Alert | Red | A table's bill has been waiting longer than the configured threshold | **Go to Bills →** shortcut link |
+
+Alerts stack in order of arrival. Dismiss each one individually after you or a staff member has responded to it.
+
+### Stats Cards
+
+Four summary cards give you an at-a-glance snapshot of current business activity:
+
+| Card | What It Shows |
+|---|---|
+| **Active Tables** | Number of tables with open sessions right now |
+| **Pending Orders** | Orders placed but not yet confirmed or in preparation |
+| **Today's Revenue** | Total revenue recorded since midnight |
+| **Avg Order Value** | Mean value across all orders placed today |
+
+### Quick Actions Row
+
+Below the stats cards, four shortcut buttons let you jump directly to the most-used sections of the platform:
+
+| Button | Destination |
+|---|---|
+| **Kitchen View** | Live kitchen order queue |
+| **Tables** | Full table map and session management |
+| **All Orders** | Complete order list with filters |
+| **Process Bills** | Bills awaiting payment |
+
+## Active Tables List
+
+Scrolling past the quick actions, you'll find a list of every table that currently has an open session. Each row shows:
+
+- **Table name / number**
+- **Guest count** for that session
+- **Current total** — the running bill value for all orders at that table
+- **View** button — opens the full table detail
+- **Bill** button — jumps directly to the bill for that table
+
+Use this list to quickly spot high-value tables, identify tables that have been open a long time, or pull up a bill on request without hunting through the full tables view.
+
+## Recent Orders Table
+
+The Recent Orders table shows the last 10 orders placed across all tables. Each row displays:
+
+- **Order ID** and **Table**
+- **Items summary**
+- **Order total**
+- **Status badge** — one of the following:
+
+| Badge | Meaning |
+|---|---|
+| `PENDING` | Order received, not yet in preparation |
+| `PREPARING` | Kitchen or bar has started working on it |
+| `READY` | Prepared and waiting for delivery |
+| `SERVED` | Delivered to the guest |
+| `CANCELLED` | Order was voided |
+
+- **Quick action buttons** — **View** opens the full order detail; **Start Prep** advances a `PENDING` order to `PREPARING` directly from this table.
+
+## System Notifications
+
+At the bottom of the dashboard, the System Notifications panel surfaces any platform-level alerts — for example, integration errors, configuration warnings, or connectivity issues. When everything is running normally, the panel displays:
+
+> **No New Notifications**
+
+Check this panel if staff report unexpected behavior, such as orders not routing to the kitchen or payment processing delays.
+
+<Note>
+The Staff Dashboard at `/staff` is the same view your waiter and cashier staff use. As an admin you have full visibility and can act on everything they see — acknowledging alerts, advancing order statuses, and processing bills — without impersonating another user or changing your role.
+</Note>

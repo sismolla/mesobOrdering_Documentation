@@ -1,0 +1,132 @@
+---
+title: "Set Up Loyalty Programs to Reward Repeat Guests"
+sidebarTitle: "Loyalty Programs"
+description: "Create and manage guest loyalty programs in MesobOrdering — stamp cards, visit-count rewards, and buy-X-get-Y deals that build repeat business."
+---
+
+Loyalty programs give your guests a reason to keep coming back. MesobOrdering lets you design stamp cards, visit-based rewards, and buy-X-get-Y promotions that guests accumulate automatically as they order — no physical cards required. You manage everything from `/admin/loyalty-config`, where you can create new programs, track every guest's progress, and process reward redemptions with a single click.
+
+---
+
+## At a Glance
+
+The top of the Loyalty Config page shows a summary grid with four stats:
+
+| Stat | What it shows |
+|---|---|
+| **Programs** | Total number of loyalty programs you have created. |
+| **Active** | Programs that are currently live and visible to guests. |
+| **Guests** | Total number of loyalty cards issued across all programs. |
+| **Rewards Ready** | Guests who have reached the redemption threshold and are waiting to claim their reward. |
+
+---
+
+## Program Types
+
+MesobOrdering supports three types of loyalty programs:
+
+| Type | How it works |
+|---|---|
+| **Stamp Card** | A guest earns one stamp per qualifying visit or order. Once they collect the required number of stamps, they unlock their reward. |
+| **Visit Count** | A guest's total visit count is tracked. After reaching the target number of visits, the reward is triggered. |
+| **Buy X Get Y** | A guest purchases a specific menu item a set number of times and then receives a bonus item for free. This type requires you to specify a **Target Item** (what they buy) and a **Bonus Item** (what they receive as the reward). |
+
+---
+
+## Creating a Loyalty Program
+
+<Steps>
+  <Step title="Open the program designer">
+    From `/admin/loyalty-config`, click **"Design Program"**. The program creation form opens.
+  </Step>
+  <Step title="Fill in the program details">
+    Complete the following fields:
+
+    | Field | Description |
+    |---|---|
+    | **Program Identity** | The internal and guest-facing name of the program, e.g. "VIP Coffee Club". |
+    | **Reward Type** | Choose **Stamp Card**, **Visit Count**, or **Buy X Get Y**. |
+    | **Target Threshold** | The number of stamps or visits a guest must reach to earn the reward. For Buy X Get Y, this is the number of times they must purchase the target item. |
+    | **Public Reward Message** | The message shown to guests when they earn the reward, e.g. "Get a free coffee!" Keep it short and exciting. |
+    | **Campaign Active** | Toggle on to make the program live immediately after deploying. Toggle off to save it as a draft. |
+  </Step>
+  <Step title="Deploy the program">
+    Click **"Deploy Program"**. The new program appears on the Programs tab and is immediately available to guests if the Campaign Active toggle is on.
+  </Step>
+</Steps>
+
+---
+
+## Managing Programs
+
+Each loyalty program appears as a card in the program list. The card displays:
+
+- **Name** and **Type** of the program
+- An **Active** or **Paused** status badge
+- The **requirement** (e.g. "10 stamps")
+- **Enrolled count** — how many guests are currently participating
+- The **reward message** guests will receive
+
+You have three actions available on each card:
+
+| Action | What it does |
+|---|---|
+| **Configure** | Opens the program editor so you can update any field. |
+| **Pause / Activate** | Toggles the program on or off without deleting it. Paused programs stop accepting new progress but retain existing guest data. |
+| **Delete** | Permanently removes the program and all associated guest progress. This cannot be undone. |
+
+---
+
+## Viewing Guest Progress
+
+Click the **Guests** tab on the Loyalty Config page to see a table of all guests enrolled in your programs.
+
+| Column | Description |
+|---|---|
+| **Guest Profile** | Guest's name and phone number. |
+| **Strategy** | The name of the loyalty program they are enrolled in. |
+| **Progress** | A progress bar alongside a stamp or visit count, e.g. **7/10**. |
+| **Status** | Either **In Progress** (still working toward the threshold) or **Ready** (threshold reached, reward available). |
+| **Actions** | Contextual buttons based on status (see Redeeming a Reward below). |
+
+When a guest reaches the required threshold, their status changes to **"Ready"** and a **Redeem** button appears in the Actions column.
+
+---
+
+## Redeeming a Reward
+
+<Steps>
+  <Step title="Open the Guests tab">
+    Navigate to `/admin/loyalty-config` and click the **Guests** tab.
+  </Step>
+  <Step title="Find the eligible guest">
+    Look for guests with a **Status: Ready** indicator. You can scan the Status column or search by guest name or phone number.
+  </Step>
+  <Step title="Click Redeem">
+    Click the **Redeem** button in the Actions column for that guest.
+  </Step>
+  <Step title="Confirm the redemption">
+    A confirmation prompt appears summarizing the guest's name, the program, and the reward. Confirm to process it. The guest's stamp or visit count is reduced by the required threshold amount, and their progress resets to continue accumulating toward their next reward.
+  </Step>
+</Steps>
+
+---
+
+## Redemption History
+
+The **History** tab gives you a full log of every reward redemption processed through MesobOrdering. Use it to audit activity, resolve disputes, or review promotional performance.
+
+| Column | Description |
+|---|---|
+| **Date** | Timestamp of when the redemption was processed. |
+| **Guest** | Name and phone number of the guest whose reward was redeemed. |
+| **Program** | The loyalty program the reward belongs to. |
+| **Savings** | The number of stamps or visits deducted as part of the redemption. |
+| **Order** | The linked order ID if the redemption was tied to a specific order, or **"Manual"** if it was processed independently. |
+| **Staff** | The staff member or admin account that processed the redemption. |
+
+---
+
+<Tip>
+  Start with a simple **Stamp Card** program — they're easy for guests to understand at a glance and consistently effective at driving return visits. Once your guests are used to the system, you can layer in Buy X Get Y promotions tied to specific menu items.
+</Tip>

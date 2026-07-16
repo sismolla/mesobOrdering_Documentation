@@ -1,0 +1,91 @@
+---
+title: "Frequently Asked Questions About MesobOrdering"
+sidebarTitle: "FAQ"
+description: "Answers to common MesobOrdering questions about login issues, menu setup, staff roles, payment methods, loyalty programs, and Telegram integration."
+---
+
+This page answers the most common questions from hotel admins using MesobOrdering. If you can't find what you're looking for here, reach out to MesobOrdering support directly from your dashboard.
+
+## Account & Login
+
+<AccordionGroup>
+  <Accordion title="I forgot my password — how do I reset it?">
+    Go to [mesobordering.com/login](https://mesobordering.com/login) and click **Forgot Password?** below the login form. Enter the email address associated with your account, then check your inbox for a password reset link. Follow the link to set a new password. If the email doesn't arrive within a few minutes, check your spam folder.
+  </Accordion>
+
+  <Accordion title="I'm being redirected to an onboarding screen after login.">
+    This happens when your hotel's subscription status is **PENDING** or **SUSPENDED**. Your account exists, but access to the platform is restricted until the subscription is active. Contact MesobOrdering support to resolve your subscription status and regain full access.
+  </Accordion>
+
+  <Accordion title="My account shows 'Account Paused' — what does that mean?">
+    A super admin has manually paused your account. You won't be able to log in until it's reactivated. Contact MesobOrdering support to request reactivation and confirm your account details.
+  </Accordion>
+</AccordionGroup>
+
+## Menu
+
+<AccordionGroup>
+  <Accordion title="Why can't I delete a category?">
+    A category can only be deleted when it has no items assigned to it. Before deleting, move all items in that category to another category or delete the items individually. Once the category is empty, the delete option will become available.
+  </Accordion>
+
+  <Accordion title="What does the Department setting on a menu item do?">
+    The Department setting routes an order to the correct preparation station. Items assigned to **Kitchen** appear in the Kitchen View queue, which your kitchen staff monitor. Items assigned to **Bar** appear in the Bar queue for your bar staff. If you don't set a department on an item, it routes to the Kitchen queue by default.
+  </Accordion>
+
+  <Accordion title="How do I temporarily hide an item without deleting it?">
+    Open the item in Menu Manager and toggle off **Is Available**. The item will display as **Sold Out** in the guest-facing menu and won't be orderable until you toggle it back on. All item details, pricing, and settings are preserved while it's hidden.
+  </Accordion>
+</AccordionGroup>
+
+## Staff
+
+<AccordionGroup>
+  <Accordion title="Can I change a staff member's email address?">
+    No — a staff member's email address is their login identifier and cannot be changed after the account is created. If you need to update an email, delete the existing staff account and create a new one with the correct email address. Historical data tied to the old account is not transferred automatically.
+  </Accordion>
+
+  <Accordion title="What happens when I pause a staff member?">
+    The staff member immediately sees an **Account Paused** screen the next time they attempt to log in — they cannot access any part of the platform while paused. Their profile and historical data are fully preserved. You can reactivate them at any time from **Staff Management** by clicking **Edit** and toggling their status back to active.
+  </Accordion>
+</AccordionGroup>
+
+## Payments
+
+<AccordionGroup>
+  <Accordion title="What payment providers can I add?">
+    MesobOrdering supports a range of Ethiopian payment providers. You can add **TeleBirr**, **CBE**, **Awash Bank**, **Dashen Bank**, and other compatible providers from the **Payments** tab inside **System Config**. Each provider can be configured with its own account details and display name.
+  </Accordion>
+
+  <Accordion title="TeleBirr shows a validation error when I enter the account number.">
+    TeleBirr accounts must be linked to a valid Ethiopian mobile number. Make sure the number you're entering starts with **09**, **07**, or the international prefix **+251**. Any other format will fail validation. Double-check the number with your TeleBirr account holder if the error persists.
+  </Accordion>
+</AccordionGroup>
+
+## Loyalty Programs
+
+<AccordionGroup>
+  <Accordion title="How do I give a stamp to a guest?">
+    Stamps are awarded automatically when guests place qualifying orders that meet the conditions of your loyalty program. If you need to manually trigger a reward redemption — for example, when a guest reaches the stamp threshold — go to the **Guests** tab inside **Loyalty Programs**, find the guest, and process the redemption from there.
+  </Accordion>
+
+  <Accordion title="Can a guest be enrolled in more than one loyalty program?">
+    Yes — a guest can hold cards in multiple loyalty programs at the same time. Each program tracks that guest's progress independently, so stamps or visits earned toward one program don't count toward another. There's no limit to how many programs a single guest can participate in.
+  </Accordion>
+</AccordionGroup>
+
+## Telegram
+
+<AccordionGroup>
+  <Accordion title="My link code expired before I could use it.">
+    Link codes are valid for 10 minutes after generation. If yours expired, go to **System Config → Alerts** and click **New Code** to generate a fresh 6-digit code. Copy it immediately and send it to [@AlphaBotServiceBot](https://t.me/AlphaBotServiceBot) on Telegram before the new code expires.
+  </Accordion>
+
+  <Accordion title="What Telegram bot commands can I use?">
+    Once your hotel account is connected to @AlphaBotServiceBot, you can manage key tasks directly from Telegram without opening the dashboard:
+
+    - `/status` — Check the current system status of your hotel.
+    - `/orders` — View a summary of recent orders.
+    - `/pause [item]` — Temporarily hide a menu item, marking it as unavailable for guests.
+  </Accordion>
+</AccordionGroup>

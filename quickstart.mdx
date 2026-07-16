@@ -1,47 +1,70 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get Started with MesobOrdering in Minutes"
+sidebarTitle: "Quickstart"
+description: "Set up your hotel on MesobOrdering in four steps: log in, configure your brand, build your menu, and add your team to go live."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+This guide walks you through everything you need to do to take your hotel from a fresh MesobOrdering account to a fully operational digital ordering setup. By the end, you'll have your hotel identity configured, your menu published, your team accounts created, and your QR codes ready to place on tables.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+  <Step title="Log In">
+    Open your browser and go to [https://mesobordering.com/login](https://mesobordering.com/login). Enter your registered email address and password, then click **Sign In**.
 
-    ```bash
-    npm install your-package
-    ```
+    If you've forgotten your password, click **Forgot Password?** below the sign-in form. You'll receive a password reset link at your registered email address — follow the link to set a new password and log in.
+
+    <Note>
+      If your subscription is in a **PENDING** or **SUSPENDED** state, you'll land on an onboarding screen instead of the main dashboard. Follow the on-screen prompts to resolve your subscription status before continuing.
+    </Note>
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
 
-    ```bash
-    your-cli init
-    ```
+  <Step title="Configure Your Hotel Identity">
+    Once you're logged in, navigate to **System Config** (see [System Configuration](/system-config)) using the left sidebar. This is where you set up how your hotel appears to guests and staff across the platform.
+
+    Fill in the following fields and click **Save** when you're done:
+
+    - **Hotel Name** — your property's display name, shown on the guest menu and receipts.
+    - **Brand Color** — the primary color used throughout your guest-facing menu interface.
+    - **Logo** — upload your hotel's logo (recommended: PNG with transparent background).
+    - **Wi-Fi SSID** — the name of your hotel's guest Wi-Fi network.
+    - **Wi-Fi Password** — the guest Wi-Fi password, displayed on the menu for convenience.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
-    ```
+  <Step title="Build Your Menu">
+    Go to **Menu Manager** (see [Menu Manager](/menu-manager)) in the left sidebar. Your menu is organised into categories (for example, *Starters*, *Mains*, *Cocktails*) with individual items nested inside each one.
+
+    Start by creating at least one category, then add menu items under it. For each item, provide:
+
+    - **Name and description** — help guests understand what they're ordering.
+    - **Price** — displayed in your configured currency.
+    - **Department** — assign each item to either **Kitchen** or **Bar** so orders are routed to the correct team.
+
+    Repeat this process until your full menu is built out. Changes go live immediately — no publish step required.
+  </Step>
+
+  <Step title="Add Your Team">
+    Navigate to **Staff Management** (see [Staff Management](/staff-management)). Here you create login accounts for every member of staff who will use MesobOrdering during service.
+
+    Add accounts for each role your operation requires:
+
+    - **Waiters** — for taking and tracking table orders.
+    - **Kitchen staff** — for the Kitchen View order queue.
+    - **Bar staff** — for the Bar order queue.
+    - **Cashiers** — for processing payments and closing tabs.
+
+    Assign each team member a temporary password when creating their account. Advise them to change it on first login.
+  </Step>
+
+  <Step title="Go Live">
+    You're ready to start taking orders. Print or display your QR codes and place them on each guest table. When a guest scans a code, their device opens your digital menu automatically in the browser — no app required.
+
+    You and your team can monitor incoming orders in real time from the [Staff Dashboard](/operations-overview). Orders are automatically routed to the Kitchen View or Bar queue based on the department you assigned to each menu item.
   </Step>
 </Steps>
 
 <Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+  Bookmark [mesobordering.com/admin](https://mesobordering.com/admin) for quick daily access to your admin dashboard.
 </Tip>
+
+<Note>
+  Your full admin panel is always available at [https://mesobordering.com/admin](https://mesobordering.com/admin). All management sections — menus, staff, config, analytics, and more — are accessible from the left sidebar once you're logged in.
+</Note>

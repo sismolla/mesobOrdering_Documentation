@@ -1,0 +1,97 @@
+{
+  "projectType": "saas",
+  "projectName": "MesobOrdering",
+  "projectDescription": "A QR-code-based hotel ordering and management platform that lets hotel admins manage menus, staff, loyalty programs, dynamic pricing, and real-time operations from a single dashboard.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Admin Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "admin-layout"
+            ]
+          },
+          {
+            "group": "Menu & Staff",
+            "pages": [
+              "menu-manager",
+              "staff-management",
+              "page-manager"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "system-config",
+              "loyalty-programs",
+              "dynamic-pricing"
+            ]
+          },
+          {
+            "group": "Analytics & Oversight",
+            "pages": [
+              "analytics",
+              "fraud-control"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "operations-overview",
+              "kitchen-view"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/roles-permissions",
+              "reference/glossary",
+              "reference/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "QR-code-driven digital menu for hotel guests",
+    "Menu Manager with categories, availability toggles, and dietary info",
+    "Staff Management with role-based access control",
+    "Page Manager to enable/disable guest and staff pages without coding",
+    "System Configuration: brand identity, payments, Wi-Fi, public profile",
+    "Loyalty Programs: stamp cards, visit count, buy-X-get-Y rewards",
+    "Dynamic Pricing: time-based and day-based price adjustment rules",
+    "Analytics dashboard with revenue charts, best sellers, and export",
+    "Fraud Control / Audit Log for staff activity monitoring",
+    "Telegram bot integration for live order notifications",
+    "Real-time Operations views: Staff Dashboard and Kitchen Queue"
+  ],
+  "publicApiSurface": [
+    "https://mesobordering.com/admin — Admin panel root",
+    "https://mesobordering.com/login — Login page",
+    "/admin/menu — Menu Manager",
+    "/admin/staff — Staff Management",
+    "/admin/pages — Page Manager",
+    "/admin/config — System Configuration",
+    "/admin/loyalty-config — Loyalty Programs",
+    "/admin/pricing — Dynamic Pricing",
+    "/admin/analytics — Analytics Dashboard",
+    "/admin/audit — Fraud Control / Audit Log",
+    "/staff — Staff Dashboard (Operations)",
+    "/staff/kitchen — Kitchen View (Operations)",
+    "/guest/explore — Guest Public Profile Page"
+  ]
+}

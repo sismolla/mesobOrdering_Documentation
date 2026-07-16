@@ -1,0 +1,109 @@
+---
+title: "Add and Manage Your Hotel Team in MesobOrdering"
+sidebarTitle: "Staff Management"
+description: "Create staff accounts, assign roles, pause inactive team members, and manage your full hotel service team from one place in MesobOrdering."
+---
+
+Staff Management gives you complete control over who can access your hotel's MesobOrdering workspace and what they can do once they're in. Navigate to `/admin/staff` to create accounts for new team members, assign them the right role, update their details as responsibilities change, and instantly deactivate anyone who leaves — all from a single, easy-to-use dashboard.
+
+## Stats Overview
+
+Four summary cards at the top of the Staff Management page keep you informed about your team at a glance.
+
+| Card | What it shows |
+|---|---|
+| **Total Team** | The total number of staff accounts created for your hotel |
+| **Active** | Staff members whose accounts are currently enabled and can log in |
+| **Inactive** | Staff members whose accounts have been paused |
+| **Admins** | The number of accounts holding the Admin role |
+
+---
+
+## Staff Roles
+
+Every staff member is assigned one of five roles. Each role grants access to a specific set of features so your team only sees what they need to do their job.
+
+| Role | What they can do |
+|---|---|
+| 🧑‍🍳 **Waiter** | View incoming orders, update order status, and process guest bills |
+| 👨‍🍳 **Kitchen Staff** | View orders routed to the kitchen and update kitchen order status |
+| 🍹 **Bar Staff** | View and manage orders routed to the bar |
+| 💵 **Cashier** | View orders and process guest bills |
+| 🔑 **Admin** | Full access to all hotel management features, including staff, menu, and settings |
+
+---
+
+## Adding a Staff Member
+
+<Steps>
+  <Step title="Open the Add Staff form">
+    Click the **+ Add Staff Member** button on the Staff Management page.
+  </Step>
+  <Step title="Fill in the staff member's details">
+    Complete the required fields in the form:
+
+    | Field | Required | Notes |
+    |---|---|---|
+    | First Name | ✅ Yes | The staff member's given name |
+    | Last Name | No | The staff member's family name |
+    | Email Address | ✅ Yes | Used as the login username — **cannot be changed after the account is created** |
+    | Temporary Password | ✅ Yes | Minimum 8 characters. The staff member will be prompted to set a new password on their first login |
+    | Role | ✅ Yes | Select from Waiter, Kitchen Staff, Bar Staff, Cashier, or Admin |
+  </Step>
+  <Step title="Review the Access Rights preview">
+    As you select a role, the **Access Rights** panel on the right side of the form updates to show exactly which features the chosen role can access. Confirm this matches what you intend before proceeding.
+  </Step>
+  <Step title="Create the account">
+    Click **Create Account**. The staff member receives their credentials and can log in immediately using the email and temporary password you set.
+  </Step>
+</Steps>
+
+---
+
+## Editing a Staff Member
+
+Click the **pencil icon** next to a staff member's row to open the **Edit Staff Info** modal. You can update the following fields:
+
+| Field | Editable |
+|---|---|
+| First Name | ✅ Yes |
+| Last Name | ✅ Yes |
+| Role | ✅ Yes |
+| Email Address | 🔒 Locked — cannot be changed |
+
+After making your changes, click **Update Profile** to save them.
+
+---
+
+## Pausing and Reactivating Staff
+
+If a team member is temporarily unavailable — on leave, for example — you can pause their account without deleting it.
+
+- Click the **pause ⏸ button** next to a staff member to deactivate their account. They will see an **"Account Paused"** message the next time they attempt to log in.
+- Click the **play ▶ button** next to a paused staff member to reactivate their account and restore their access immediately.
+
+Pausing preserves all account details and history, making it the preferred option over deletion for temporary absences.
+
+---
+
+## Deleting a Staff Member
+
+Click the **trash icon** next to a staff member, then confirm the deletion in the prompt that appears.
+
+<Warning>
+  Deleting a staff account is permanent and cannot be undone. The staff member's access is revoked immediately and their account cannot be recovered. If you only need to temporarily block access, use the **pause** option instead.
+</Warning>
+
+---
+
+## Account Restrictions
+
+<Note>
+  You cannot edit, pause, or delete your own admin account. This safeguard prevents you from accidentally locking yourself out of your hotel's MesobOrdering workspace. If changes to your own account are needed, ask another admin to make them on your behalf.
+</Note>
+
+---
+
+## Searching and Filtering
+
+Use the **search box** at the top of the staff table to filter team members by name or email address in real time. Use the **role dropdown** to narrow the list to a specific role — useful when you manage a large team and need to quickly find all waiters or all admins.

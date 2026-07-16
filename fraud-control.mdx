@@ -1,0 +1,104 @@
+---
+title: "Monitor Staff Activity with the MesobOrdering Audit Log"
+sidebarTitle: "Fraud Control"
+description: "The MesobOrdering Fraud Control page logs every staff action, flags high-risk activity, and gives you a per-staff breakdown to detect and investigate issues."
+---
+
+The MesobOrdering Fraud Control page is your primary tool for maintaining accountability across your hotel's operations. Located at `/admin/audit`, it records every action taken by staff — from order cancellations to payment confirmations — and automatically flags activity that deviates from expected patterns. For hotel managers, this level of visibility is essential: it deters dishonest behavior, provides an evidence trail when incidents occur, and makes it straightforward to identify staff members whose activity warrants closer attention.
+
+## Critical Alert Banner
+
+When high or critical risk actions have been detected within your property, a prominent red banner appears at the very top of the Fraud Control page. The banner displays the total count of flagged actions and includes a **Review Now** button that takes you directly to the Alerts tab so you can begin your investigation immediately.
+
+<Warning>
+  Do not dismiss or ignore the critical alert banner. Critical-risk events represent actions that may indicate fraud, unauthorized access, or data compliance violations and require your immediate attention.
+</Warning>
+
+## Three Tabs Overview
+
+The Fraud Control page is organized into three tabs, each serving a distinct purpose.
+
+| Tab | Purpose |
+|---|---|
+| **Alerts** | Surfaces only high and critical risk activity that requires your immediate review |
+| **Action Log** | A complete, searchable, and filterable record of every staff action taken |
+| **Staff Analysis** | A per-staff breakdown of the past 7 days, including flagged activity indicators |
+
+Use the **Alerts** tab first when you arrive, then move to **Action Log** for investigation, and review **Staff Analysis** regularly to spot emerging patterns.
+
+## Alerts Tab
+
+The Alerts tab presents each flagged action as a card. Every card is visually distinguished by a colored left border that matches the risk level, so you can triage at a glance without opening each one.
+
+Each alert card contains the following information:
+
+| Field | Description |
+|---|---|
+| **Action Type** | The category of action performed, for example *Order Cancelled* or *Payment Confirmed* |
+| **Risk Level Badge** | A color-coded label: Low, Medium, High, or Critical |
+| **Who** | The staff member's email address, their assigned role, and the exact timestamp of the action |
+| **Details Panel** | An expandable key/value panel showing specifics such as order ID, the previous status, and the new status after the action |
+
+Reviewing the details panel before taking any disciplinary or investigative step ensures you have full context — some flagged actions may have a legitimate explanation confirmed by a supervisor.
+
+## Action Log Tab
+
+The Action Log tab gives you a complete, unfiltered history of every staff action recorded in the system. You can narrow the list using the filters at the top of the page.
+
+### Filters
+
+| Filter | Options |
+|---|---|
+| **Search** | Free-text search by staff email, action type, or entity ID (e.g. an order ID) |
+| **Risk Level** | All, Low, Medium, High, Critical |
+| **Action Type** | Order Cancelled, Status Changed, Payment Confirmed, GDPR Export, GDPR Deletion |
+
+Combining filters is the fastest way to isolate specific incidents — for example, filtering by a single staff member's email and the *Order Cancelled* action type will show every cancellation they have ever performed.
+
+### Log Table Columns
+
+| Column | What it shows |
+|---|---|
+| **Timestamp** | The exact date and time the action was recorded |
+| **Personnel** | The staff member's email address and their role |
+| **Action Type** | The category of action performed |
+| **Entity Reference** | The ID of the object affected, such as an order ID or session ID |
+| **Risk Assessment** | A color-coded dot and label indicating the risk level of the action |
+| **Details** | A **View Data** link that expands an inline panel with the full action details |
+
+<Note>
+  When the log contains more than 50 entries for your current filter, **Previous** and **Next** pagination controls appear at the bottom of the table. Use these to navigate through high-volume periods without losing your filter settings.
+</Note>
+
+## Staff Analysis Tab
+
+The Staff Analysis tab provides a 7-day summary card for every staff member who has been active on your property. This view is designed for weekly reviews and makes it easy to compare activity levels across your team.
+
+Each staff card displays:
+
+| Element | Description |
+|---|---|
+| **Email + Role** | The staff member's login email and their assigned role |
+| **FLAGGED badge** | A red badge that appears when the system has detected suspicious activity patterns for this staff member |
+| **Total Operations** | The total number of actions logged for this person in the past 7 days |
+| **Void Orders** | The count of cancelled or voided orders — shown in red if the count exceeds 5 |
+| **Payments** | The number of payment confirmation actions performed |
+| **Security Events** | The count of security-related events (e.g. GDPR exports or deletions) — shown in red if greater than 0 |
+| **Last Active** | The timestamp of this staff member's most recent recorded action |
+
+<Tip>
+  Check the Staff Analysis tab weekly to spot patterns. Unusually high void orders or cancelled orders from a single staff member — especially combined with security events — can indicate an issue that warrants a direct conversation or deeper investigation in the Action Log.
+</Tip>
+
+## Risk Levels
+
+MesobOrdering assigns a risk level to every logged action based on its potential for harm or misuse. Understanding what each level means helps you prioritize your review time.
+
+| Risk Level | Color | Meaning |
+|---|---|---|
+| **Low** | Green | Routine operations with no cause for concern, such as a standard status update |
+| **Medium** | Yellow | Noteworthy actions that are not necessarily suspicious but are worth monitoring over time |
+| **High** | Red | Actions that require management attention and may indicate a policy violation or error |
+| **Critical** | Purple | Actions that require immediate investigation and may represent fraud, unauthorized access, or a compliance breach |
+
+You cannot change the risk level assigned to an action — these are determined automatically by the system. If you believe an action was flagged incorrectly, document your reasoning and retain the log entry rather than dismissing it.

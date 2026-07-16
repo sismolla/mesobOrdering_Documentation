@@ -1,0 +1,113 @@
+---
+title: "Track Revenue and Performance in MesobOrdering"
+sidebarTitle: "Analytics"
+description: "Use the MesobOrdering analytics dashboard to monitor gross revenue, order trends, best-selling items, and conversion rates. Export reports as CSV or PDF."
+---
+
+The MesobOrdering analytics dashboard gives hotel managers and owners a real-time view of how their property is performing — from total revenue down to individual item sales. You can access it at `/admin/analytics` or by clicking the **Analytics** button in the top navigation bar. Whether you are reviewing yesterday's service, comparing weekly trends, or preparing a report for stakeholders, this dashboard consolidates everything you need in one place.
+
+## Date Range Selector
+
+At the top of the dashboard, four preset buttons let you instantly switch the time window for all charts and metrics.
+
+| Button | What it shows |
+|---|---|
+| **Today** | Data for the current calendar day |
+| **7 Days** | Rolling last 7 days |
+| **Month** | The current calendar month |
+| **Custom** | Opens a date picker so you can define any start and end date |
+
+The active range is highlighted so you always know which window is in view. Changing the range updates every metric card, chart, and table on the page simultaneously.
+
+## Key Metrics
+
+Six metric cards appear directly below the date selector, giving you an at-a-glance summary of the selected period.
+
+| Metric | What it measures |
+|---|---|
+| **Gross Revenue** | Total revenue collected across all paid orders in the period |
+| **Total Orders** | Number of individual orders placed by guests |
+| **Avg Ticket** | Average monetary value per order (Gross Revenue ÷ Total Orders) |
+| **Sessions** | Total guest table sessions opened during the period |
+| **Completion** | Percentage of sessions that resulted in a paid bill |
+| **Cancel Rate** | Percentage of orders that were cancelled before completion |
+
+These six numbers provide a rapid health check. A rising Cancel Rate alongside a falling Completion percentage, for example, is an early signal worth investigating in the Order Status Breakdown below.
+
+## Revenue Chart
+
+Below the metric cards, an area/line chart plots daily revenue across the selected date range. Dates run along the X-axis and revenue (in your local currency) runs along the Y-axis. Hover over any point on the chart to see the exact revenue figure for that day, making it easy to identify peak service days or unexpected dips.
+
+<Tip>
+  Use the **Month** range to spot seasonal trends and identify your best-performing days. Comparing month-over-month peaks can help you schedule staff and promotions more effectively.
+</Tip>
+
+## Order Status Breakdown
+
+A donut chart displays how your orders are distributed across each status stage for the selected period. Each segment is color-coded for quick recognition, and the legend alongside the chart shows the absolute count for every status.
+
+| Status | Color | Meaning |
+|---|---|---|
+| **PENDING** | Purple | Order received but not yet picked up by the kitchen |
+| **PREPARING** | Amber | Kitchen is actively working on the order |
+| **READY** | Teal | Order is prepared and waiting for delivery to the table |
+| **SERVED** | Green | Order has been delivered to the guest |
+| **CANCELLED** | Red | Order was cancelled before completion |
+
+A healthy operation will show the majority of orders in **SERVED** (green). A large **CANCELLED** slice warrants a closer look at the Fraud Control audit log.
+
+## Best Sellers
+
+The Best Sellers table ranks your top five items by total revenue generated during the selected period.
+
+| Column | Description |
+|---|---|
+| **Rank** | Position from #1 (highest revenue) to #5 |
+| **Item** | Name of the menu item |
+| **Qty Ordered** | Total units of that item ordered in the period |
+| **Revenue** | Total revenue that item contributed |
+
+The top three ranked items are highlighted with blue badges, making your strongest performers immediately visible. Use this table when making menu decisions — if a high-margin item consistently appears in the top three, consider featuring it more prominently on your QR menu.
+
+## Strategic Insights Panel
+
+Below the Best Sellers table, three KPI tiles surface derived insights that go beyond raw numbers.
+
+| KPI | What it tells you |
+|---|---|
+| **Orders per Session** | Average number of orders placed during a single table session — a proxy for upsell effectiveness |
+| **Conversion Efficiency** | The percentage of opened sessions that progressed to a paid bill, equivalent to the Completion metric expressed in context |
+| **Leading Revenue Stream** | The single top-earning menu item for the period, labeled **MVP**, so you always know your anchor product |
+
+These three figures are designed to prompt action: a low Orders per Session suggests guests may not be exploring the menu, while a low Conversion Efficiency may indicate service or payment friction.
+
+## Exporting Reports
+
+You can download a formatted report of your analytics data at any time using the export flow.
+
+<Steps>
+  <Step title="Open the export dialog">
+    Click the green **Report** button in the top-right corner of the analytics dashboard.
+  </Step>
+  <Step title="Choose a file format">
+    Select the format that suits your use case:
+    - **CSV** — a spreadsheet-compatible file, ideal for further analysis in Excel or Google Sheets
+    - **PDF** — a formatted document ready to share with management or file for records
+  </Step>
+  <Step title="Select a report type">
+    Three report types are available:
+
+    | Report Type | Contents |
+    |---|---|
+    | **Performance Summary** | Key metrics: revenue, orders, average order value, sessions, bills paid, and cancellations |
+    | **Top Performing Items** | Ranked best-sellers list with quantity and revenue for each item |
+    | **Full Strategic Report** | Combined PDF with summary statistics, full top-items list, and a timestamp — best for management reviews |
+  </Step>
+  <Step title="Download">
+    The file downloads to your device immediately — no email or waiting required.
+  </Step>
+</Steps>
+
+<Note>
+  All exports reflect the currently selected date range. Make sure you have the correct range chosen before downloading, especially when generating monthly reports for payroll or auditing purposes.
+</Note>

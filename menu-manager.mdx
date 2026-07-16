@@ -1,0 +1,119 @@
+---
+title: "Manage Your Hotel Menu with MesobOrdering"
+sidebarTitle: "Menu Manager"
+description: "Add, edit, and organize your digital menu items and categories in MesobOrdering. Control availability, dietary tags, pricing, and departments."
+---
+
+The Menu Manager is your central hub for building and maintaining the digital menu your guests see when they scan your QR code. Navigate to `/admin/menu` to add new dishes and drinks, organise them into categories, set prices, flag dietary information, and toggle items in or out of availability — all without touching a line of code.
+
+## Stats Overview
+
+At the top of the Menu Manager, four summary cards give you an at-a-glance snapshot of your current menu health.
+
+| Card | What it shows |
+|---|---|
+| **Total Items** | The total number of menu items you have created, regardless of status |
+| **Categories** | The number of active categories used to group your items |
+| **Live / Available** | Items that are currently marked as available and visible to guests |
+| **Popular Items** | Items you have flagged with the "Is Popular" toggle |
+
+---
+
+## Managing Categories
+
+Categories let you group related items — for example *Starters*, *Main Course*, *Cocktails*, or *Soft Drinks* — so guests can browse your menu with ease.
+
+### Creating a Category
+
+<Steps>
+  <Step title="Open the category panel">
+    Click the **+ Categories** button on the Menu Manager page.
+  </Step>
+  <Step title="Fill in the category details">
+    Complete the fields in the **New Category** modal:
+
+    | Field | Required | Notes |
+    |---|---|---|
+    | Category Name | ✅ Yes | Displayed on the guest menu |
+    | Description | No | Optional context shown beneath the category name |
+    | Active | No | Toggle on to make the category visible; off to hide it from guests |
+  </Step>
+  <Step title="Save the category">
+    Click **Create**. The new category appears immediately in the category list and becomes available when adding menu items.
+  </Step>
+</Steps>
+
+### Editing a Category
+
+Click the **pencil icon** next to any category to open the **Edit Category** modal. Update the name, description, or active status, then click **Update** to save your changes.
+
+### Deleting a Category
+
+Click the **trash icon** next to a category to delete it.
+
+<Note>
+  The delete button is disabled if the category still contains menu items. Move or delete all items within a category before you can remove it.
+</Note>
+
+---
+
+## Managing Menu Items
+
+All your menu items are displayed in a table with the following columns:
+
+| Column | Description |
+|---|---|
+| **Menu Items** | Thumbnail image, item name, and assigned department (Kitchen or Bar) |
+| **Price (ETB)** | The item price in Ethiopian Birr |
+| **Categories** | Pill badges showing which category or categories the item belongs to |
+| **Status** | Either **Available** or **Sold Out** |
+| **Actions** | Edit (pencil) and Delete (trash) icons |
+
+### Adding a Menu Item
+
+<Steps>
+  <Step title="Open the Add Item form">
+    Click the **+ Add Item** button at the top of the menu table.
+  </Step>
+  <Step title="Fill in the item details">
+    Complete the form using the fields described below:
+
+    | Field | Required | Notes |
+    |---|---|---|
+    | Item Name | ✅ Yes | The name guests see on the menu |
+    | Price (ETB) | ✅ Yes | Enter the price in Ethiopian Birr |
+    | Description | No | A short description of the dish or drink |
+    | Category | ✅ Yes | Select from your existing categories |
+    | Department | No | Choose **Kitchen** or **Bar** to route orders correctly |
+    | Image URL | No | A publicly accessible URL for the item thumbnail |
+    | Prep Time (minutes) | No | Estimated preparation time shown to guests |
+    | Dietary Info | No | Check any that apply: **Vegetarian**, **Vegan**, **Gluten-Free**, **Dairy-Free**, **Spicy** |
+    | Is Available | No | Toggle on to make the item orderable; toggle off to mark it as sold out |
+    | Is Popular | No | Toggle on to feature the item in the Popular section of the guest menu |
+  </Step>
+  <Step title="Save the item">
+    Click **Create**. The item is added to the table and immediately reflects its availability status on the guest-facing menu.
+  </Step>
+</Steps>
+
+### Editing a Menu Item
+
+Click the **pencil icon** in the Actions column for the item you want to change. The **Edit Item** modal opens with all existing values pre-filled. Make your changes and click **Save Changes**.
+
+### Deleting a Menu Item
+
+Click the **trash icon** in the Actions column, then confirm the deletion in the prompt that appears.
+
+<Warning>
+  Deleting a menu item is permanent and cannot be undone. Any guest who had the item in their cart will no longer be able to order it. Consider toggling **Is Available** off instead of deleting if you plan to bring the item back later.
+</Warning>
+
+---
+
+## Searching and Filtering
+
+Use the **search box** at the top of the items table to filter items by name or description in real time. Use the **category dropdown** next to the search box to narrow the list down to a single category. You can combine both controls to quickly locate any item in a large menu.
+
+<Tip>
+  Use the **Is Popular** toggle to highlight your best dishes on the guest menu. Popular items are surfaced prominently, making it easier for guests to discover your most-loved offerings without scrolling through the full list.
+</Tip>

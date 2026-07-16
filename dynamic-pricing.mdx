@@ -1,0 +1,93 @@
+---
+title: "Automate Menu Pricing with Dynamic Pricing Rules"
+sidebarTitle: "Dynamic Pricing"
+description: "Create time-based and day-based pricing rules in MesobOrdering to automatically apply discounts or surcharges during specific hours. Rules deploy instantly."
+---
+
+Dynamic pricing lets you automatically adjust menu prices based on the time of day and day of the week — no manual edits required during service. You define a set of rules at `/admin/pricing`, and MesobOrdering applies them in real time whenever a guest opens the menu. Rules are evaluated in descending order of priority: **Rule #1 is evaluated first**, Rule #2 second, and so on. If two rules overlap on the same time window and days, the higher-positioned rule takes precedence.
+
+---
+
+## Stats Overview
+
+At the top of the pricing page, three stat cards give you a quick health check on your rule configuration:
+
+| Stat | Description |
+|---|---|
+| **Total Rules** | The total number of pricing rules configured, active or inactive. |
+| **Active Now** | The number of rules currently in effect based on the current time and day. |
+| **Conflicts** | The number of rules that overlap with another rule on the same time window and days. Should always be **0**. |
+
+<Note>
+  If the **Conflicts** stat shows a non-zero count, two or more of your rules are targeting the same time slot and days. Only the higher-priority rule will apply — review and reorder or remove the conflicting rules to keep your pricing predictable.
+</Note>
+
+---
+
+## Quick-Start Presets
+
+To help you get started quickly, MesobOrdering includes four built-in pricing presets. Click any preset tile to instantly add it as a new rule in your list — you can then edit or reorder it like any custom rule.
+
+| Preset | Adjustment | Days | Time Window |
+|---|---|---|---|
+| **Lunch Special** | −10% | Mon – Fri | 12:00 – 14:00 |
+| **Dinner Peak** | +10% | All days | 18:00 – 22:00 |
+| **Happy Hour** | −15% | All days | 16:00 – 18:00 |
+| **Weekend Extra** | +8% | Sat – Sun | 12:00 – 22:00 |
+
+---
+
+## Creating a Custom Rule
+
+<Steps>
+  <Step title="Add a new rule">
+    Scroll to the bottom of the rules list and click **"+ Add Custom Strategic Rule"**. A new rule card expands inline.
+  </Step>
+  <Step title="Fill in the rule fields">
+    Configure the rule using the following fields:
+
+    | Field | Description |
+    |---|---|
+    | **Strategy Name** | A descriptive label for the rule, e.g. "Weekend Rush" or "Early Bird Discount". |
+    | **Adjustment** | Enter a numeric value and select the unit — **%** for a percentage change or **ETB** for a fixed amount. Positive values are markups; negative values are discounts. |
+    | **Start Time** | The time of day the rule begins applying. |
+    | **End Time** | The time of day the rule stops applying. |
+    | **Active** | Toggle on to enable the rule when deployed; toggle off to save it as inactive. |
+    | **Day Pills** | Click each day pill — **Sun Mon Tue Wed Thu Fri Sat** — to select the days this rule applies. Selected days are highlighted; click again to deselect. |
+  </Step>
+  <Step title="Preview the adjustment">
+    As you fill in the adjustment value and unit, the **Price Preview** pill on the rule card updates live to show you what guests will see — for example, **📈 +10%** for a surcharge or **📉 −15%** for a discount.
+  </Step>
+  <Step title="Deploy your rules">
+    Click the **"Deploy Rules"** button (yellow, at the top of the page) to push all rule changes to the server. Rules take effect immediately after deployment.
+  </Step>
+</Steps>
+
+---
+
+## Rule Priority
+
+Rules are numbered sequentially — **#1**, **#2**, **#3**, and so on — and applied top-to-bottom. Rule #1 has the highest priority. If two rules are active at the same time on the same day, only the rule with the lower number (higher position) is applied.
+
+You can reorder rules at any time using the **↑** and **↓** buttons on each rule card. The rule number badge updates automatically to reflect the new order. After reordering, click **"Deploy Rules"** to save the new priority sequence.
+
+---
+
+## Saving Rules
+
+Pricing rules do not save automatically. You must explicitly deploy them for changes to take effect.
+
+<Steps>
+  <Step title="Click Deploy Rules">
+    Click the yellow **"Deploy Rules"** button at the top of the `/admin/pricing` page. This applies to all unsaved changes — new rules, edits, deletions, and reordering.
+  </Step>
+  <Step title="Wait for confirmation">
+    A **"Saving…"** spinner appears while the changes are being written. Once complete, you'll see the message **"System synchronized successfully!"** Rules are now live and begin applying to guest menus immediately.
+  </Step>
+</Steps>
+
+---
+
+<Tip>
+  Use the **Happy Hour** and **Lunch Special** presets as your starting point, then adjust the time windows to match your hotel's actual peak and off-peak periods. Most hotels find that even a modest 10–15% discount during slow hours noticeably increases order volume from guests already on the premises.
+</Tip>

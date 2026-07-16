@@ -1,0 +1,76 @@
+---
+title: "Real-Time Kitchen Order Queue in MesobOrdering"
+sidebarTitle: "Kitchen View"
+description: "The MesobOrdering Kitchen View shows the live kitchen order queue. Admins and kitchen staff can monitor and update order preparation statuses in real time."
+---
+
+The Kitchen View at `/staff/kitchen` is a live, auto-refreshing order queue designed for use on the kitchen display or a tablet mounted at the prep station. It is the primary workspace for your kitchen staff role, showing only the orders that need to be prepared right now. As an admin, you also have full access to this view for operational oversight or to step in when the floor gets busy.
+
+## What the Kitchen View Shows
+
+Every order card in the queue corresponds to a single order routed to the **Kitchen** department. Cards are ordered by time of placement so the oldest outstanding order is always at the top.
+
+Each card displays:
+
+| Field | Description |
+|---|---|
+| **Table number** | Which table the order belongs to |
+| **Order items** | Each item name and quantity |
+| **Time elapsed** | How long ago the order was placed, updated in real time |
+| **Current status** | The order's position in the preparation workflow |
+
+### Status Flow
+
+Orders move through the following stages in sequence:
+
+```
+PENDING → PREPARING → READY → SERVED
+```
+
+| Status | Meaning |
+|---|---|
+| `PENDING` | Order received; preparation has not started |
+| `PREPARING` | Kitchen has started working on the order |
+| `READY` | Order is plated and waiting for the waiter to collect |
+| `SERVED` | Waiter has delivered the order to the guest |
+
+## Updating Order Status
+
+Advancing an order through the queue takes a single click on the appropriate status button directly on the order card.
+
+<Steps>
+  <Step title="Find the order card in the queue">
+    Locate the relevant order card. Cards are sorted oldest-first so priority orders surface naturally at the top. You can also scan by table number if a waiter calls out a specific table.
+  </Step>
+  <Step title="Click the status button to advance the order">
+    Each card shows the next available action based on its current status. For example, an order in `PENDING` state displays a **Start Preparing** button. Clicking it immediately moves the order to `PREPARING` and timestamps the transition.
+  </Step>
+  <Step title="Click Mark Ready when the order is plated">
+    When preparation is complete, click **Mark Ready** on the card. Two things happen simultaneously:
+    - A **Kitchen Ready Alert** sound plays on the kitchen display (if audio alerts are enabled in **System Config → Notifications**).
+    - The assigned waiter receives an in-app notification to collect the order.
+  </Step>
+  <Step title="Order moves to SERVED after delivery">
+    Once the waiter confirms delivery — either from their own device or from the Staff Dashboard — the order status advances to `SERVED` and the card is removed from the active queue automatically.
+  </Step>
+</Steps>
+
+## Department Routing
+
+MesobOrdering routes each order item to the correct station based on the **Department** assigned to that menu item when it was created.
+
+| Department | Where the order appears |
+|---|---|
+| **Kitchen** | Kitchen View (`/staff/kitchen`) |
+| **Bar** | Bar staff view |
+| *(none assigned)* | Kitchen View — items without a department default to Kitchen |
+
+This means a single guest order containing both a meal and a cocktail is automatically split: the meal card appears in the Kitchen View and the cocktail card appears in the Bar view. Each station only sees what is relevant to them.
+
+<Tip>
+Open your **Menu Manager** and verify that every item has the correct Department selected. Mis-routed items — for example, drinks appearing in the kitchen queue — are almost always caused by a missing or incorrect Department assignment on the menu item.
+</Tip>
+
+<Note>
+As an admin, you can use the Kitchen View to step in during busy periods or to train new kitchen staff on the preparation workflow. All status changes you make are logged against your admin account, keeping the audit trail accurate.
+</Note>

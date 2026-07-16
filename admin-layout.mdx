@@ -1,0 +1,82 @@
+---
+title: "Understanding the MesobOrdering Admin Layout"
+sidebarTitle: "Admin Layout"
+description: "Learn your way around the MesobOrdering admin interface — the top bar, left sidebar sections, and real-time system status indicators."
+---
+
+When you log in to MesobOrdering, the admin interface is divided into two main structural parts: a **top bar** that runs across the full width of the screen, and a **left sidebar** that provides navigation to every section of the platform. Together, these two elements give you fast access to all management tools, your account settings, and live system health information — without ever needing to remember a URL.
+
+## Top Bar
+
+The top bar is always visible at the top of the admin interface, regardless of which page you're on. It contains the following controls from left to right:
+
+| Element | What It Does |
+|---|---|
+| **Language Selector** | Switch the admin interface language. Changes apply immediately across all admin pages. |
+| **Settings Button** | Opens a quick-access panel for platform-level settings. |
+| **Analytics Button** | Takes you directly to the Analytics dashboard for a snapshot of your property's performance. |
+| **Admin Avatar & Name** | Displays your account name and profile photo. Click it to open a dropdown menu with account options, including **Logout**. |
+| **Notification Bell** | Shows real-time alerts and system notifications. A badge appears when you have unread notifications. |
+
+## Left Sidebar
+
+The left sidebar is your primary navigation hub. It is organised into four labelled sections, each grouping related tools together so you can find what you need at a glance.
+
+### MANAGEMENT
+
+Day-to-day operational tools for managing your menu, team, and guest-facing content.
+
+| Link | Path | What You Can Do |
+|---|---|---|
+| **Menu Manager** | `/admin/menu` | Create and edit menu categories, items, prices, and department assignments. |
+| **Staff Management** | `/admin/staff` | Add, edit, and deactivate staff accounts. Assign roles and manage access. |
+| **Page Manager** | `/admin/pages` | Edit the content and layout of your guest-facing pages, including the menu landing experience. |
+
+### CONFIGURATION
+
+Settings that define how your hotel operates and how guests experience the platform.
+
+| Link | Path | What You Can Do |
+|---|---|---|
+| **System Config** | `/admin/config` | Set your hotel name, logo, brand color, and Wi-Fi details. |
+| **Loyalty** | `/admin/loyalty-config` | Configure your loyalty program rules, point earning rates, and redemption thresholds. |
+| **Dynamic Pricing** | `/admin/pricing` | Create time-based or demand-based pricing rules that adjust item prices automatically. |
+
+### ANALYTICS
+
+Reporting and audit tools for understanding performance and protecting revenue.
+
+| Link | Path | What You Can Do |
+|---|---|---|
+| **Analytics** | `/admin/analytics` | View dashboards covering revenue, order volumes, peak periods, and top-selling items. |
+| **Fraud Control** | `/admin/audit` | Review audit logs, flag suspicious activity, and manage anomaly detection settings. |
+
+### OPERATIONS
+
+Live views used by staff during active service hours.
+
+| Link | Path | What You Can Do |
+|---|---|---|
+| **Staff Dashboard** | `/staff` | Monitor all incoming orders in real time, track order status, and coordinate service across departments. |
+| **Kitchen View** | `/staff/kitchen` | Dedicated order queue for kitchen staff, showing food orders sorted by time and status. |
+
+## System Status Indicators
+
+At the bottom of the left sidebar, three status indicators give you a live snapshot of the platform's health. Each indicator displays a label and a color-coded dot:
+
+| Indicator | What It Shows | Green | Red |
+|---|---|---|---|
+| **ONLINE** | API connectivity | The API is reachable and responding normally. | The API is unreachable or returning errors. |
+| **ACTIVE** | System status | All platform services are running as expected. | One or more services have stopped or are degraded. |
+| **CONNECTED** | Database connection | The database is connected and operational. | The database connection has been lost or timed out. |
+
+If you see a red indicator, refresh the page first. If the issue persists, check the [MesobOrdering status page](https://mesobordering.com) or contact support.
+
+## How to Log Out
+
+You have two ways to log out of the admin interface:
+
+- **Sidebar Logout button** — scroll to the bottom of the left sidebar and click the **Logout** button. You'll be returned to the login screen immediately.
+- **Top-bar avatar dropdown** — click your admin name and avatar in the top bar, then select **Logout** from the dropdown menu that appears.
+
+Both methods end your session securely. Always log out when stepping away from a shared or public device.

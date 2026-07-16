@@ -1,0 +1,202 @@
+---
+title: "Configure Your Hotel Settings in MesobOrdering"
+sidebarTitle: "System Config"
+description: "Set your hotel's brand identity, payment methods, sound alerts, Telegram notifications, and public profile from the MesobOrdering System Configuration page."
+---
+
+The System Configuration page is your central control panel for everything that shapes how MesobOrdering looks, behaves, and communicates on behalf of your hotel. You can reach it at `/admin/config`. The page is organized into four tabs — **Identity**, **Payments**, **Alerts**, and **Profile** — each covering a distinct aspect of your setup. A sticky footer bar containing the **Save** button stays visible no matter how far you scroll, so your changes are always one click away from being applied.
+
+<Warning>
+  Changes you make on this page are **not saved automatically**. You must click the **Save** button in the sticky footer before navigating away, or your edits will be lost.
+</Warning>
+
+---
+
+## Identity Tab
+
+The Identity tab (`/admin/config → Identity`) controls your hotel's brand presentation and the connectivity details your guests see inside the menu app.
+
+### Brand Identity
+
+| Field | Description |
+|---|---|
+| **Hotel Name** | The display name used throughout the guest-facing app and printed receipts. |
+| **Brand Color** | Pick a color using the visual color picker or type a hex value directly (e.g. `#2C7A4B`). This color tints buttons, accents, and highlights in the guest menu. |
+| **Logo** | Paste a publicly accessible image URL or use the upload button to host your logo directly. Recommended size: 256 × 256 px, PNG with transparent background. |
+| **Currency** | Fixed to **ETB (Ethiopian Birr)**. All prices across menus, orders, and reports are shown in ETB. |
+
+### Guest Connectivity
+
+| Field | Description |
+|---|---|
+| **Wi-Fi Name (SSID)** | The name of your hotel's guest Wi-Fi network. |
+| **Wi-Fi Password** | The password for that network. |
+
+Both fields are displayed to guests inside the menu app so they can connect without asking staff. Leave them blank if you prefer not to show Wi-Fi details publicly.
+
+---
+
+## Payments Tab
+
+The Payments tab lets you configure the digital payment methods guests can use to settle their bills. You can add as many providers as your hotel supports.
+
+### Adding a Payment Method
+
+<Steps>
+  <Step title="Open the Add Payment form">
+    On the Payments tab, locate the **Add Payment Method** panel.
+  </Step>
+  <Step title="Select a provider">
+    Choose a provider from the **Type** dropdown. Available options include **TeleBirr**, **CBE**, **Awash Bank**, **Dashen Bank**, and others.
+  </Step>
+  <Step title="Fill in the details">
+    | Field | Description |
+    |---|---|
+    | **Display Label** | The name shown to guests, e.g. "Pay via TeleBirr". |
+    | **Account / Phone Number** | The account number or phone number that receives payments. |
+    | **Account Holder Name** | The registered name on the account, shown for guest confirmation. |
+  </Step>
+  <Step title="Save the method">
+    Click **"Add [Provider Name]"** (the button label updates to match the selected provider). The new method appears in your list immediately.
+  </Step>
+</Steps>
+
+<Note>
+  TeleBirr requires a valid Ethiopian mobile number. Accepted formats are **09XXXXXXXX**, **07XXXXXXXX**, or **+2519XXXXXXXX / +2517XXXXXXXX**.
+</Note>
+
+### Managing Your Payment Methods
+
+Once added, each payment method appears as a row in the list. You can:
+
+- Click **↑** or **↓** to reorder methods — guests see them in the order you set.
+- Click **✕** to remove a method you no longer accept.
+
+<Note>
+  If you add no payment methods at all, guests will be prompted to **call the waiter** for payment assistance rather than seeing a payment screen.
+</Note>
+
+---
+
+## Alerts Tab
+
+The Alerts tab controls the in-browser audio cues that notify your staff of activity, and connects MesobOrdering to a Telegram bot for real-time notifications.
+
+### Sound Alert Toggles
+
+Use the toggle switches to enable or disable each alert sound:
+
+| Alert | Triggers when… |
+|---|---|
+| **New Order Entry** | A guest submits a new order from any table. |
+| **Kitchen Ready Alert** | The kitchen marks an order as ready for service. |
+| **Billing Assistance Request** | A guest requests the bill from their table. |
+
+### Telegram Bot Integration
+
+Connecting a Telegram bot lets you and your team receive live order alerts, bill notifications, and daily summary reports directly in Telegram — even when you're away from the admin dashboard. Once connected, you can also send commands to the bot:
+
+| Command | Action |
+|---|---|
+| `/status` | Returns the current number of open orders and active tables. |
+| `/orders` | Lists all pending orders with table numbers. |
+| `/pause [item]` | Temporarily marks a menu item as unavailable. |
+
+#### How to Connect Telegram
+
+<Steps>
+  <Step title="Start the linking process">
+    On the Alerts tab, click **"Connect Telegram"**. A 6-digit link code appears on screen.
+  </Step>
+  <Step title="Note your code">
+    Keep this page open and take note of the 6-digit code displayed. You'll need it in the next step.
+  </Step>
+  <Step title="Open Telegram and find the bot">
+    On your phone or desktop, open Telegram and search for **@AlphaBotServiceBot**.
+  </Step>
+  <Step title="Send the link command">
+    Send the following message to the bot: `/link [YOUR CODE]` — replacing `[YOUR CODE]` with the 6-digit code. Use the **Copy** button next to the code to copy the full command to your clipboard, then paste it into the Telegram chat.
+  </Step>
+  <Step title="Verify the connection">
+    Return to the Alerts tab in MesobOrdering and click **"Check Status"**.
+  </Step>
+  <Step title="Confirm success">
+    Once linked, the Telegram section turns green and displays **"Telegram is connected"**. Your bot will now forward notifications to the linked chat.
+  </Step>
+</Steps>
+
+To disconnect the bot at any time, click the **Disconnect** button and confirm the prompt.
+
+<Note>
+  Link codes **expire after 10 minutes**. If yours expires before you complete the steps, click **"New Code"** to generate a fresh one and start from Step 2.
+</Note>
+
+---
+
+## Profile Tab
+
+The Profile tab defines your hotel's public-facing listing — what guests see when they scan your QR code and view your hotel's details page.
+
+### Public Profile
+
+| Field | Description |
+|---|---|
+| **Tagline** | A short, punchy line that sums up your hotel (max 120 characters). Shown prominently on your public profile. |
+| **Description** | A longer paragraph introducing your hotel, its atmosphere, and what makes it special. |
+| **Website URL** | Your hotel's official website, linked from the profile page. |
+| **Cover Image** | The hero image displayed at the top of your public profile. Use a high-resolution landscape image (recommended: 1200 × 400 px). |
+
+### Contact Information
+
+| Field | Description |
+|---|---|
+| **Phone** | Primary front-desk or reservations number. |
+| **Email** | Guest-facing contact email address. |
+| **Address** | Your hotel's full street address. |
+
+### Location & Map
+
+You can pin your hotel on the map using any of three methods:
+
+- **Auto-Detect GPS** — Click the **Detect** button to use your browser's location to set the coordinates automatically.
+- **Manual Coordinates** — Type your **Latitude** and **Longitude** values, then click **"Generate Map from Coordinates"** to plot the pin.
+- **Address to Map** — Type your address into the address field and click the **→** button to geocode it into map coordinates.
+
+Alternatively, paste a **Google Maps embed URL** directly into the embed field to use a custom map view.
+
+### Social Media
+
+Link your hotel's social accounts so guests can follow you. Supported platforms:
+
+**Facebook · Instagram · X/Twitter · TripAdvisor**
+
+Paste the full profile URL for each platform you want to display.
+
+### Amenities
+
+Click any chip to add it to your hotel's amenity list:
+
+**Free Wi-Fi · Parking · Pool · Gym · Spa · Restaurant · Bar · Room Service · Conference Room · Airport Shuttle · Laundry · 24h Reception · Air Conditioning · Elevator · Rooftop Terrace · Kids Area**
+
+To add an amenity that isn't in the preset list, type it into the custom amenity field and click **+ Add**.
+
+### Opening Hours
+
+The opening hours table lets you set your hotel's hours on a per-day basis:
+
+| Column | Description |
+|---|---|
+| **Day** | Day of the week (Monday through Sunday). |
+| **Opens** | Time picker for when your hotel opens that day. |
+| **Closes** | Time picker for when your hotel closes. |
+| **Closed** | Toggle this on for days your hotel is fully closed. |
+
+### Photo Gallery
+
+Add images to your public photo gallery by pasting image URLs into the gallery input and pressing Enter. Each thumbnail shows an **×** button — click it to remove that photo from the gallery.
+
+---
+
+## Saving Your Changes
+
+When you're done making changes on any tab, click the **Save** button in the sticky footer bar at the bottom of the page. You'll see a **"Saving…"** spinner while the request processes, followed by a **"✓ Settings saved!"** confirmation message once your changes have been successfully stored.
