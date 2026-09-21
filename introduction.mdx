@@ -1,175 +1,95 @@
 ---
 title: "MesobOrdering: QR Hotel Ordering for Modern Hotels"
 sidebarTitle: "Introduction"
-description: "MesobOrdering is a QR-based hotel ordering platform. Guests order from their table; admins manage menus, staff, and operations in one dashboard."
+description: "MesobOrdering is a QR-based hotel ordering platform with Odoo-style inventory (v3.0). Guests order from their table; admins manage menus, inventory, staff, and operations in one dashboard."
 ---
 
-**Turn tables faster. Keep guests happier. All with a scan.**
+**Turn tables faster. Keep guests happier. Control inventory with audit precision. All with a scan.**
 
-MesobOrdering is a next-generation, cloud-based **Restaurant Growth & Digital Ordering Platform**. It replaces static paper menus with dynamic, interactive QR codes. It also connects guest-side ordering with staff-side operations — kitchen, bar, waiter, and cashier — in real time, so your entire venue runs from one integrated system.
-
-Whether you operate a boutique hotel restaurant, a busy cafe, a lounge, or a multi-department hospitality property, MesobOrdering fits. Your guests open a beautiful digital menu on their phone instantly — no app download, no login. Your team runs every shift from a single dashboard.
+MesobOrdering is a next-generation, cloud-based **Hospitality Operating System & Digital Ordering Platform**. It replaces static paper menus with dynamic, interactive QR codes. It connects guest-side ordering with staff-side operations — kitchen, bar, storekeeper, head chef, waiter, and cashier — in real time, backed by an Odoo-style multi-location append-only inventory engine.
 
 <Card title="Zero setup cost. No hidden fees. Get started in minutes." icon="rocket" horizontal href="/quickstart">
-  Sign up, build your menu, print your QR cards, and start taking orders today.
+  Sign up, build your menu, configure inventory, print your QR cards, and start taking orders today.
 </Card>
 
-## The 30-Second Pitch
-
-Traditional menus are static, slow, and expensive to reprint. Waiters waste time writing orders on paper. Customers get frustrated waiting for their bills. Owners have no visibility into who cancelled what.
-
-**MesobOrdering changes the game.** Guests scan a table-specific QR code, browse a localized digital menu, customize items, and order directly from their phone. Orders route instantly to the kitchen or bar. Waiters get live call alerts. Cashiers generate bills with local payment options like **TeleBirr** and **CBE Birr**. Owners get full audit transparency over every action.
-
-The best part? It costs **completely zero** to get started.
+---
 
 ## Why MesobOrdering Is Different
 
 <CardGroup cols={2}>
-  <Card title="100% Mobile First Browser-Based" icon="mobile-screen">
-    No app downloads. Works on Safari, Chrome, and even Opera Mini — on any smartphone, on any network.
+  <Card title="Odoo-Style Inventory Engine (v3.0)" icon="boxes-stacked">
+    Multi-location stock ledgers, packaging conversions (Crates to Bottles, Sacks to Kg), FIFO lot tracking, purchase orders (PO), goods receipt notes (GRN), and spot audit variance tracking.
+  </Card>
+
+  <Card title="Asynchronous Recipe Outbox Engine" icon="bolt">
+    Sub-second POS checkout. Completed orders background-consume ingredient lots and recalculate real-time servings availability projections.
   </Card>
 
   <Card title="Multi-Department Order Splitting" icon="split">
-    A steak and a cocktail on one ticket? The chef sees the steak, the bartender sees the cocktail — automatically.
+    Food items route to Kitchen KDS; drinks route to Bar Display — automatically.
   </Card>
 
-  <Card title="Built for Ethiopian Networks" icon="signal">
-    Ultra-lightweight code loads in milliseconds on 3G. WebSocket updates hit staff screens in 0.2 seconds.
+  <Card title="Cashier Shift Reconciliation" icon="wallet">
+    Track opening float, expected cash vs actual cash count, and shift variances (`PosShift`).
   </Card>
 
-  <Card title="Bulletproof Fraud Control" icon="shield-halved">
-    Every cancel, void, and payment is logged with the staff email, timestamp, and role. Nothing goes missing.
+  <Card title="Telegram Bot & Live Alerts" icon="paper-plane">
+    Receive order alerts, bill notifications, and system commands via Telegram.
   </Card>
 
-  <Card title="Dynamic Pricing Engine" icon="tag">
-    Auto-discount slow afternoons. Auto-mark up Friday-night rushes. Set the rules once and let the system sell smarter.
-  </Card>
-
-  <Card title="Loyalty That Guests Won't Lose" icon="star">
-    Digital stamp cards — _Buy 10 coffees, get 1 free_ — replace paper cards guests always misplace.
+  <Card title="Bulletproof Audit & Fraud Control" icon="shield-halved">
+    Every void, status change, and inventory movement is written to an immutable append-only audit trail.
   </Card>
 </CardGroup>
 
-<Card title="See the full attraction — features, differentiators, and ROI" icon="sparkles" horizontal href="/why-mesobordering">
-  What MesobOrdering offers and why it beats traditional POS setups.
-</Card>
-
-## How It Works
-
-MesobOrdering runs end-to-end in five frictionless steps — from the moment a guest sits down to the moment the table is cleared.
-
-<Steps>
-  <Step title="Scan">
-    The guest scans a **table-specific QR code**. The menu opens instantly in their mobile browser — no app download, no Wi-Fi login required.
-  </Step>
-  <Step title="Order">
-    They browse a beautiful, localized menu, customize items ("no onions", "extra spicy"), and submit their order — one tap.
-  </Step>
-  <Step title="Route">
-    The system **splits the order automatically**. Food items route to the Kitchen Display; drinks route to the Bar Display. No paper tickets, no shouting.
-  </Step>
-  <Step title="Serve">
-    Waiters track live session times on the **Waiter Dashboard** and hear an audio alert the moment a guest taps the "Call Waiter" button.
-  </Step>
-  <Step title="Pay">
-    Guests request the bill from their phone. Cashiers generate an itemized, tax-calculated receipt with **TeleBirr, CBE Birr, or cash**. One confirmation clears the table.
-  </Step>
-</Steps>
-
-<Card title="Read the complete flow with screenshots" icon="arrow-right" horizontal href="/how-it-works">
-  Deep dive into how a MesobOrdering order moves from table to till.
-</Card>
+---
 
 ## System Roles
 
-MesobOrdering uses a role-based access model so every team member sees exactly what they need. The five roles are designed around the real responsibilities of hotel staff.
+MesobOrdering uses a role-based access model so every team member sees exactly what they need.
 
 | Role | What They Can Do |
 | --- | --- |
-| **Admin** | Full access to all settings, menus, staff accounts, analytics, pricing, loyalty programs, and fraud controls. The primary account for hotel managers. |
-| **Waiter** | Views incoming orders assigned to their tables, updates order status, and coordinates with kitchen and bar staff during service. |
-| **Kitchen** | Receives food orders in real time via the Kitchen View, marks items as in-progress or completed, and manages preparation queues. |
-| **Bar** | Receives drink orders in real time, manages beverage preparation status, and coordinates with waiters for delivery. |
-| **Cashier** | Views completed orders, processes payments, applies discounts or loyalty rewards, and closes out guest tabs. |
+| **Admin** | Full access to all settings, menus, inventory, staff accounts, analytics, pricing, loyalty, and audit controls. |
+| **Storekeeper** | Receives physical goods (GRN), issues POs, manages packaging rules, dispatches transfers, and performs warehouse audits. |
+| **Head Chef** | Executes kitchen prep batches (Injera, butchery, kibbeh), manages recipes, requests transfers, and monitors food stock. |
+| **Waiter** | Views active table sessions, takes orders, and coordinates delivery. |
+| **Kitchen** | Receives food orders in real time via KDS display, updating status from preparing to ready. |
+| **Bar** | Receives drink orders in real time via Bar display, updating beverage fulfillment status. |
+| **Cashier** | Processes bills, verifies TeleBirr/CBE payments, reconciles shift cash floats, and awards loyalty stamps. |
 
-## Key Features
+---
 
-MesobOrdering ships with everything a modern hotel needs to run a smooth, data-driven food and beverage operation.
+## Key Feature Modules
 
 <CardGroup cols={2}>
+  <Card title="Inventory Engine (v3.0)" icon="boxes-stacked" href="/inventory-overview">
+    Odoo-style UoM conversion rules, FIFO lot tracking, PO/GRN receiving, transfers, prep batches, and recipe auto-deduction.
+  </Card>
+
   <Card title="Menu Manager" icon="utensils" href="/menu-manager">
-    Build and organize your digital menu with categories, items, descriptions, prices, and department assignments — all updated instantly.
+    Build and organize digital menus with categories, prices, dietary tags, and department assignments.
   </Card>
 
   <Card title="Staff Management" icon="users" href="/staff-management">
-    Create and manage accounts for your entire team. Assign roles, set temporary passwords, and control access levels across departments.
+    Create staff accounts, assign roles, set temporary passwords, and scope station permissions.
   </Card>
 
-  <Card title="Loyalty Programs" icon="star" href="/loyalty-programs">
-    Reward repeat guests with configurable loyalty schemes. Set point rules, redemption thresholds, and track guest reward balances.
+  <Card title="System Config & Telegram" icon="gear" href="/system-config">
+    Configure hotel identity, payment methods, Telegram alert bot linking, and public profile settings.
   </Card>
 
-  <Card title="Dynamic Pricing" icon="tag" href="/dynamic-pricing">
-    Adjust item prices automatically based on time of day, demand, or custom rules — without touching the menu manually.
+  <Card title="Analytics & Valuation" icon="chart-bar" href="/analytics">
+    Track revenue, peak hours, best-selling items, FIFO stock valuation, and waste variance reports.
   </Card>
 
-  <Card title="Analytics" icon="chart-bar" href="/analytics">
-    Track revenue, order volumes, peak hours, and top-selling items with real-time and historical dashboards built for hotel managers.
-  </Card>
-
-  <Card title="Fraud Control" icon="shield-halved" href="/fraud-control">
-    Monitor suspicious order patterns, review audit logs, and protect your revenue with built-in anomaly detection and controls.
+  <Card title="Fraud & Audit Control" icon="shield-halved" href="/fraud-control">
+    Monitor suspicious voids, staff activity logs, and system audit trails.
   </Card>
 </CardGroup>
 
-## Built for Real Restaurants
-
-<CardGroup cols={2}>
-  <Card title="Use the hardware you already own" icon="laptop">
-    Kitchen displays run on cheap Android TVs or old iPads. Waiters use their own phones. Cashiers use any laptop. **No hardware lock-in.**
-  </Card>
-
-  <Card title="Real-time WebSocket sync" icon="bolt">
-    Orders appear on the kitchen screen within **0.2 seconds** of being placed. No refresh button, no delays.
-  </Card>
-
-  <Card title="Admin Page Gate" icon="toggle-on">
-    Toggle guest-facing pages — cart, loyalty, recommendations — on or off from the admin panel with a single click.
-  </Card>
-
-  <Card title="Instant ROI" icon="chart-line">
-    Zero reprint costs. Faster table rollover. Waiter efficiency up **35%+**. Immediate savings from day one.
-  </Card>
-</CardGroup>
-
-## Explore MesobOrdering
-
-<CardGroup cols={3}>
-  <Card title="Why MesobOrdering" icon="sparkles" href="/why-mesobordering">
-    Differentiators, strengths, and what makes us unbeatable.
-  </Card>
-
-  <Card title="How It Works" icon="route" href="/how-it-works">
-    The full 5-step flow from scan to payment.
-  </Card>
-
-  <Card title="Pricing" icon="tag" href="/pricing">
-    Free tier, no hidden fees, pay-as-you-grow.
-  </Card>
-
-  <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Set up your hotel in minutes.
-  </Card>
-
-  <Card title="Admin Layout" icon="grid" href="/admin-layout">
-    Learn your way around the dashboard.
-  </Card>
-
-  <Card title="Staff Guide" icon="users" href="/staff/overview">
-    Kitchen, Waiter, Bar, and Cashier guides.
-  </Card>
-</CardGroup>
+---
 
 <Note>
-  Ready to get started? Head to the [Quickstart guide](/quickstart). If you're a staff member (Kitchen, Waiter, Cashier, or Bar), see the [Staff Guide](/staff/overview).
+  Ready to get started? Head to the [Quickstart guide](/quickstart) or explore the [Inventory Overview](/inventory-overview).
 </Note>

@@ -133,6 +133,20 @@ To disconnect the bot at any time, click the **Disconnect** button and confirm t
 
 ---
 
+## Security, Station Access & Account Protection
+
+MesobOrdering implements enterprise security controls to protect staff accounts and isolate station access.
+
+### Account Lockout Protection
+- After 5 consecutive failed login attempts, the system automatically locks the account for **15 minutes** (`lockoutUntil`).
+- Admins can manually unlock accounts from **Staff Management** (`/admin/staff`).
+
+### Station Access Scoping
+- Staff members can be restricted to specific operational departments (`allowedDepartments`, e.g. `KITCHEN`, `BAR`) or specific POS terminals (`allowedPosTerminals`).
+- Enforced strictly on server-side JWT authentication checks.
+
+---
+
 ## Profile Tab
 
 The Profile tab defines your hotel's public-facing listing — what guests see when they scan your QR code and view your hotel's details page.

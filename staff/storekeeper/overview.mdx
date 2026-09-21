@@ -1,0 +1,61 @@
+---
+title: "Storekeeper & Head Chef Guide"
+sidebarTitle: "Storekeeper Guide"
+description: "Operational workflow guide for storekeepers and head chefs managing stock, receipts, prep batches, and spot audits."
+---
+
+Storekeepers and Head Chefs play a crucial role in maintaining inventory data integrity, managing physical stock receipts, dispatches, prep batches, and audits.
+
+## Key Responsibilities
+
+<CardGroup cols={2}>
+  <Card title="Receiving Vendor Shipments (GRN)" icon="truck-ramp-box">
+    Verify physical counts against Purchase Orders and log Goods Receipt Notes (GRN) with exact purchase costs and expiration dates.
+  </Card>
+
+  <Card title="Inter-Location Transfers" icon="right-left">
+    Fulfill stock request tickets from Kitchens and Bars, dispatching items from Central Store and verifying receipts.
+  </Card>
+
+  <Card title="Kitchen Production & Prep Batches" icon="fire-burner">
+    Execute prep batches (Injera baking, meat butchery splits, kibbeh clarification) to convert raw ingredients into prepared stock.
+  </Card>
+
+  <Card title="Physical Spot Audits" icon="clipboard-check">
+    Conduct weekly or monthly physical counts, reconciliation against system ledger counts, and record variance reasons.
+  </Card>
+</CardGroup>
+
+---
+
+## Daily Operational Workflows
+
+### 1. Receiving Goods (GRN)
+1. Go to **Inventory** → **Goods Receipts**.
+2. Click `+ New GRN`, select **Supplier**, and select destination **Central Store**.
+3. Input received quantities in Crates, Sacks, or Base Units.
+4. Input unit purchase price in ETB and expiration date.
+5. Click **Post GRN**.
+
+### 2. Processing Stock Transfer Requests
+1. Open **Stock Transfers**.
+2. Review pending requests from Main Kitchen or Bar.
+3. Approve items and click **Dispatch / Release Stock**.
+4. Confirm physical handoff with receiving staff.
+
+### 3. Executing Kitchen Prep Batches
+1. Go to **Prep Batches** → `+ New Prep Batch`.
+2. Select **Prep Type** (e.g. `BUTCHERY_SPLIT`), input raw ingredients (e.g. 50 kg Whole Beef).
+3. Input resulting prepared outputs (e.g. Tibs Cuts, Kitfo Meat, Bones) and cost allocation method.
+4. Click **Execute Batch**.
+
+### 4. Spot Audit & Variance Logging
+1. Go to **Spot Audits** → `+ Start Audit`.
+2. Select location (e.g. `Central Store`).
+3. Enter physical counts into **Actual Qty**.
+4. For any discrepancy, select a mandatory **Variance Reason** (`SPOILED_MOLD`, `SPILL_BREAKAGE`, `STAFF_MEAL`, etc.).
+5. Click **Commit Audit Variance**.
+
+<Note>
+  Keep your terminal session active. For technical details on FIFO lot tracking or UoM conversion rules, see the [Inventory Overview](/inventory-overview).
+</Note>

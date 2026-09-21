@@ -1,0 +1,53 @@
+---
+title: "Stock Transfers & Kitchen Prep Batches"
+sidebarTitle: "Transfers & Production"
+description: "Inter-department stock transfers and kitchen preparation batch execution with cost allocation."
+---
+
+Hospitality operations rely on moving stock between locations and converting raw items into prepared kitchen ingredients.
+
+## 1. Stock Transfers Between Locations
+
+Move inventory safely from Central Store to operational outlets (Main Kitchen, Bar, Cellar).
+
+### Transfer Lifecycle:
+
+```
+[Requested] ──(Approve)──> [Approved] ──(Dispatch)──> [Released] ──(Acknowledge)──> [Received]
+```
+
+1. **Request Transfer**: Operational staff (Head Chef or Bartender) request items from Central Store (`Status: REQUESTED`).
+2. **Approve Transfer**: Storekeeper approves item quantities (`Status: APPROVED`).
+3. **Release Stock (Dispatch)**: Storekeeper dispatches items. System allocates stock from active FIFO lots at source (`Status: RELEASED`).
+4. **Receive Stock (Acknowledge)**: Recipient counts delivered goods and confirms receipt (`Status: RECEIVED`). System logs `TRANSFER_OUT` at source and `TRANSFER_IN` at destination.
+
+---
+
+## 2. Kitchen Production & Prep Batches
+
+Kitchens process raw ingredients into intermediate items (e.g. raw beef into Kitfo meat cuts, teff flour into baked Injera, raw butter into clarified Niter Kibbeh).
+
+### Prep Batch Types (`PrepType`):
+- **`INJERA_BAKING`**: Teff Flour + Water + Ersho → Baked Injera (Count).
+- **`BUTCHERY_SPLIT`**: Whole Beef Carcass → Tibs Cuts + Kitfo Meat + Bones/Fat.
+- **`KIBBEH_CLARIFICATION`**: Raw Butter + Spices → Clarified Niter Kibbeh.
+- **`CUSTOM_PREP`**: General kitchen preparation recipes.
+
+### Cost Allocation Methods (`CostAllocationMethod`):
+When a single input yields multiple output items (e.g. butchery yielding premium cuts, minced meat, and bones):
+
+| Method | Description |
+|--------|-------------|
+| **`MARKET_VALUE`** | Costs allocated proportionally based on estimated market value per unit. |
+| **`WEIGHT`** | Costs allocated proportionally based on weight output ratios. |
+| **`MANUAL_PERCENT`** | Head Chef sets exact percentage breakdown (e.g. Tibs 60%, Kitfo 30%, Bone 10%). |
+
+### Executing a Prep Batch:
+1. Open **Inventory** → **Prep Batches** → `+ New Prep Batch`.
+2. Select **Prep Type**, Location (`Main Kitchen`), and input raw items. System calculates input cost via FIFO.
+3. Select output prepared items and cost allocation method.
+4. Click **Execute Batch**.
+
+<Note>
+  Batch execution appends a `PREP_CONSUMPTION` movement for raw inputs and creates a new `InventoryLot` with `PREP_OUTPUT` movement for output items.
+</Note>

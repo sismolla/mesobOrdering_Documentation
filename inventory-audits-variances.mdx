@@ -1,0 +1,37 @@
+---
+title: "Spot Audits & Stock Variances"
+sidebarTitle: "Audits & Variances"
+description: "Physical stock counting, ledger reconciliation, and logging stock variances with audit reasons."
+---
+
+Periodically reconcile ledger balances with physical inventory counts to maintain strict control over spoilage, spills, and shrinkage.
+
+## 1. Conducting a Physical Spot Audit
+
+1. Navigate to **Inventory** → **Spot Audits** → Click `+ Start Audit`.
+2. Select target **Storage Location** (e.g. `Bar`) and item category.
+3. System generates a physical count worksheet displaying expected quantities based on active FIFO lots.
+4. Audit staff count physical items and enter **Actual Qty**.
+
+---
+
+## 2. Registering Stock Variances & Variance Reasons
+
+If `Actual Qty ≠ Expected Qty`:
+- System calculates `Variance Qty = Actual Qty - Expected Qty`.
+- Audit staff must select a mandatory **Variance Reason (`VarianceReason`)**:
+
+| Variance Reason | Description |
+|-----------------|-------------|
+| **`SPOILED_MOLD`** | Spoilage, decay, or expiration |
+| **`SPILL_BREAKAGE`** | Accidental kitchen spill or bottle breakage |
+| **`STAFF_MEAL`** | Authorized staff meal consumption |
+| **`MEASUREMENT_ERROR`** | Scale error or counting mistake |
+| **`UNEXPLAINED`** | Unaccounted shortage (flagged for management audit) |
+
+5. Click **Commit Audit Variance**.
+6. System posts a `WASTE` or `ADJUSTMENT` movement to align system stock with physical reality.
+
+<Warning>
+  All committed variances write an immutable entry to the audit log. Unexplained variances populate management alert dashboards for loss prevention review.
+</Warning>

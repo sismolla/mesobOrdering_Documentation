@@ -1,55 +1,40 @@
-# Mintlify Starter Kit
+# MesobOrdering — Mintlify Documentation Suite
 
-Use the starter kit to get your docs deployed and ready to customize.
+This directory contains the official Mintlify MDX documentation suite for the MesobOrdering QR Hotel & Operations Platform.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+---
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## 🚀 Running Local Preview
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+To preview the documentation site locally:
 
-## AI-assisted writing
+1. Install the Mintlify CLI globally (if not installed):
+   ```bash
+   npm i -g mint
+   ```
+2. Run Mintlify in this directory:
+   ```bash
+   mint dev
+   ```
+3. Open `http://localhost:3000` in your browser.
 
-Set up your AI coding tool to work with Mintlify:
+---
 
-```bash
-npx skills add https://mintlify.com/docs
-```
+## 📚 Structure Overview
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+- `docs.json`: Configuration file defining Mintlify theme, colors, and navigation structure.
+- `index.mdx`: Homepage / Portal landing page.
+- `introduction.mdx`: Product introduction and feature showcase.
+- `inventory-overview.mdx`: Odoo-Style Inventory Engine v3.0 overview.
+- `inventory-procurement.mdx`: Purchase Orders, GRN, FIFO Lots, Accounts Payable.
+- `inventory-transfers-production.mdx`: Stock transfers and kitchen prep batches.
+- `inventory-recipes-projections.mdx`: Recipe versioning and servings projections.
+- `inventory-audits-variances.mdx`: Physical spot audits and stock variance logging.
+- `system-config.mdx`: Hotel identity, payment methods, Telegram alert linking, and security lockouts.
+- `analytics.mdx`: Sales analytics, FIFO stock valuation, and waste reporting.
+- `staff/storekeeper/overview.mdx`: Storekeeper and Head Chef operational guide.
+- `reference/roles-permissions.mdx`: Staff role matrix (Admin, Storekeeper, Chef, Waiter, Kitchen, Bar, Cashier).
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+---
 
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+*Maintained by the Documentation Lead Agent (`doc-lead`)*

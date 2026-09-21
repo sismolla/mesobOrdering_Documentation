@@ -1,0 +1,73 @@
+---
+title: "Odoo-Style Inventory Engine: Overview"
+sidebarTitle: "Inventory Overview"
+description: "Enterprise multi-location inventory architecture with immutable append-only ledgers, unit conversions, and FIFO lot tracking."
+---
+
+MesobOrdering includes an **Odoo-style enterprise inventory engine (v3.0)** engineered specifically for modern hotel and restaurant operations. It bridges the gap between high-speed POS sales and strict financial accounting.
+
+## Core Architectural Directives
+
+<CardGroup cols={2}>
+  <Card title="Immutable Append-Only Ledger" icon="scroll">
+    Historical stock levels are **never overwritten**. Every transaction appends an immutable movement record (`StockMovement`) to guarantee audit integrity.
+  </Card>
+
+  <Card title="FIFO Lot Tracking" icon="boxes-stacked">
+    Received items form explicit batches (`InventoryLot`) with unit purchase prices, receiving timestamps, and expiration dates. Cost of Goods Sold (COGS) is calculated via strict First-In, First-Out (FIFO).
+  </Card>
+
+  <Card title="Multi-Location Hierarchy" icon="warehouse">
+    Track inventory across physical locations — Central Store ("Eka Bet"), Main Kitchen, Bar ("MeTet Bet"), Pastry Kitchen, and Cellar.
+  </Card>
+
+  <Card title="Nested Unit Conversions" icon="scale-unbalanced">
+    Input items in natural operational units (Crates, Sacks, Packs) while maintaining standard base unit counts (Kilogram, Liter, Piece) on the backend.
+  </Card>
+</CardGroup>
+
+---
+
+## Unit Categories & Base Units
+
+Measurement units belong to Unit Categories with a single authoritative **Base Unit** (Conversion Factor = 1.0).
+
+| Unit Category | Base Unit | Example Secondary Units | Conversion Factor |
+|---------------|-----------|-------------------------|-------------------|
+| **Weight** | Kilogram (`kg`) | Gram (`g`), Quintal (`q`) | `1 g = 0.001 kg`, `1 q = 100 kg` |
+| **Volume** | Liter (`L`) | Milliliter (`mL`), Centiliter (`cL`) | `1 mL = 0.001 L`, `1 cL = 0.01 L` |
+| **Count** | Piece (`pc`) | Dozen (`doz`), Pack (`pk`) | `1 doz = 12 pc` |
+
+---
+
+## Packaging Rules & Item Conversions
+
+Staff do not receive or issue items exclusively in base units. Packaging conversion rules (`ItemUnitConversion`) allow entry in natural units while maintaining base unit ledger records.
+
+### Examples:
+- **Beer Bottle**: Base Unit = `Piece` (Bottle). Packaging Rule: `1 Crate = 24 Pieces`.
+- **Teff Grain**: Base Unit = `Kilogram`. Packaging Rule: `1 Sack = 50 Kilograms`.
+- **Cooking Oil**: Base Unit = `Liter`. Packaging Rule: `1 Jerrycan = 20 Liters`.
+
+```mermaid
+graph LR
+    A[Staff Inputs: 10 Crates] --> B[Packaging Rule Engine: 1 Crate = 24 Pcs]
+    B --> C[Ledger Records: +240 Base Unit Pieces]
+```
+
+---
+
+## Storage Locations
+
+Configure storage locations under **Admin Panel** → **Inventory** → **Locations**:
+
+- **`CENTRAL_STORE`**: Main receiving warehouse (e.g. "Eka Bet").
+- **`KITCHEN`**: Food prep area (e.g. "Main Kitchen", "Pastry Kitchen").
+- **`BAR`**: Beverage dispensing location (e.g. "MeTet Bet", "VIP Lounge Bar").
+- **`WAREHOUSE`**: Bulk storage facility.
+
+---
+
+<Note>
+  For detailed procurement, transfers, recipe mapping, and audit workflows, explore the subsequent Inventory Guide sections.
+</Note>

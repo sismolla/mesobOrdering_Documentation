@@ -1,29 +1,29 @@
 ---
-title: "MesobOrdering: QR Hotel Ordering & Management"
+title: "MesobOrdering: QR Hotel Ordering & Operations Platform"
 sidebarTitle: "Home"
-description: "Welcome to MesobOrdering — the QR-based hotel ordering platform. Manage menus, staff, loyalty programs, and real-time operations from one dashboard."
+description: "Welcome to MesobOrdering — the QR-based hotel ordering platform. Manage menus, staff, Odoo-style inventory (v3.0), loyalty programs, and real-time operations from one dashboard."
 ---
 
-MesobOrdering is a QR-code-driven hotel ordering and management platform. Guests scan a QR code at their table to browse your digital menu, place orders, and request bills — while you manage everything from a powerful admin dashboard. This documentation covers everything you need to configure and operate your hotel's MesobOrdering account.
+MesobOrdering is an enterprise QR-code-driven hotel ordering, POS, and inventory management platform. Guests scan a QR code at their table to browse your digital menu, place orders, and request bills — while management controls operations, inventory ledgers, and staff from a powerful admin dashboard.
 
 <CardGroup cols={2}>
   <Card title="Quick Start" icon="rocket" href="/quickstart">
     Log in, configure your hotel, and go live in minutes
   </Card>
+  <Card title="Inventory Engine (v3.0)" icon="boxes-stacked" href="/inventory-overview">
+    Odoo-style UoM packaging, FIFO lots, stock transfers, prep batches & recipes
+  </Card>
   <Card title="Menu Manager" icon="utensils" href="/menu-manager">
-    Add and organize your menu items and categories
+    Add and organize your menu items, pricing, and category structures
   </Card>
   <Card title="Staff Management" icon="users" href="/staff-management">
-    Create staff accounts and assign roles with the right permissions
+    Create staff accounts (Admin, Storekeeper, Chef, Waiter, Kitchen, Bar, Cashier)
   </Card>
   <Card title="System Configuration" icon="gear" href="/system-config">
-    Set your brand, payment methods, Wi-Fi info, and public profile
+    Set your brand identity, payment methods, Telegram alerts, and public profile
   </Card>
-  <Card title="Loyalty Programs" icon="gift" href="/loyalty-programs">
-    Reward repeat guests with stamp cards and custom loyalty rules
-  </Card>
-  <Card title="Analytics" icon="chart-bar" href="/analytics">
-    Track revenue, best sellers, and key performance metrics
+  <Card title="Analytics & Valuation" icon="chart-bar" href="/analytics">
+    Track revenue, best sellers, FIFO stock valuation, and waste analytics
   </Card>
 </CardGroup>
 
@@ -31,16 +31,19 @@ MesobOrdering is a QR-code-driven hotel ordering and management platform. Guests
 
 <Steps>
   <Step title="Set up your hotel profile">
-    Log in to `mesobordering.com/admin` and configure your brand identity, payment methods, Wi-Fi credentials, and public profile in [System Configuration](/system-config).
+    Log in to `mesobordering.com/admin` and configure your brand identity, payment methods, Wi-Fi credentials, and Telegram alerts in [System Configuration](/system-config).
   </Step>
-  <Step title="Build your menu">
-    Use the [Menu Manager](/menu-manager) to create categories and add all your food and drink items — with prices, descriptions, dietary tags, and prep times.
+  <Step title="Configure master inventory data">
+    Set up storage locations (Central Store, Kitchen, Bar), unit categories, packaging rules, and suppliers in [Inventory Overview](/inventory-overview).
+  </Step>
+  <Step title="Build your menu & recipes">
+    Use the [Menu Manager](/menu-manager) to add menu items and map recipes in [Recipes & Servings](/inventory-recipes-projections) for automatic stock auto-deduction.
   </Step>
   <Step title="Add your team">
-    Create accounts for your waiters, kitchen staff, bar staff, and cashiers in [Staff Management](/staff-management), each with the right role and permissions.
+    Create accounts for storekeepers, head chefs, waiters, kitchen, bar, and cashiers in [Staff Management](/staff-management).
   </Step>
-  <Step title="Go live">
-    Place QR codes on tables. Guests scan and start ordering. Monitor real-time activity from the [Staff Dashboard](/operations-overview) and [Kitchen View](/kitchen-view).
+  <Step title="Go live & monitor shifts">
+    Place QR codes on tables. Monitor real-time activity from the [Staff Dashboard](/operations-overview) and close cashier shifts with cash float reconciliation.
   </Step>
 </Steps>
 

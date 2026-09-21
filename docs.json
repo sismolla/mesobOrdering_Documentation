@@ -43,6 +43,16 @@
             ]
           },
           {
+            "group": "Inventory Engine (v3.0)",
+            "pages": [
+              "inventory-overview",
+              "inventory-procurement",
+              "inventory-transfers-production",
+              "inventory-recipes-projections",
+              "inventory-audits-variances"
+            ]
+          },
+          {
             "group": "Configuration",
             "pages": [
               "system-config",
@@ -73,6 +83,12 @@
             "group": "Getting Started",
             "pages": [
               "staff/overview"
+            ]
+          },
+          {
+            "group": "Storekeeper & Chef",
+            "pages": [
+              "staff/storekeeper/overview"
             ]
           },
           {

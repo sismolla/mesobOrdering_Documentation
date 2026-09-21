@@ -1,7 +1,7 @@
 ---
 title: "MesobOrdering Staff Roles and Permissions Explained"
 sidebarTitle: "Roles & Permissions"
-description: "A complete breakdown of every MesobOrdering staff role — Admin, Waiter, Kitchen, Bar, and Cashier — with their exact permissions and access levels."
+description: "A complete breakdown of every MesobOrdering staff role — Admin, Storekeeper, Head Chef, Waiter, Kitchen, Bar, and Cashier — with their exact permissions and access levels."
 ---
 
 MesobOrdering uses role-based access control so each team member sees only the tools and information relevant to their job. When you create a staff account, you assign a role that determines which pages and actions that person can access. Only the Admin role has full access to the entire platform — all other roles are scoped to their specific responsibilities.
@@ -10,43 +10,55 @@ MesobOrdering uses role-based access control so each team member sees only the t
 
 The table below summarises exactly what each role can and cannot do across the platform.
 
-| Feature / Section | Admin | Waiter | Kitchen | Bar | Cashier |
-|---|---|---|---|---|---|
-| Menu Manager (view & edit) | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Staff Management | ✅ | ✗ | ✗ | ✗ | ✗ |
-| System Configuration | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Loyalty Programs | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Dynamic Pricing | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Analytics | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Fraud Control / Audit Log | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Page Manager | ✅ | ✗ | ✗ | ✗ | ✗ |
-| Take & manage orders | ✅ | ✅ | ✅ (view/update own) | ✅ (view/update own) | ✅ (view) |
-| Process bills | ✅ | ✅ | ✗ | ✗ | ✅ |
-| Kitchen queue view | ✅ | ✗ | ✅ | ✗ | ✗ |
-| Bar queue view | ✅ | ✗ | ✗ | ✅ | ✗ |
-| Staff Dashboard | ✅ | ✅ | ✗ | ✗ | ✅ |
+| Feature / Section | Admin | Storekeeper | Head Chef | Waiter | Kitchen | Bar | Cashier |
+|---|---|---|---|---|---|---|---|
+| Menu Manager (view & edit) | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Staff Management | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| System Configuration | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Inventory PO & GRN Receiving | ✅ | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Inventory Stock Transfers | ✅ | ✅ | ✅ | ✗ | ✗ | ✗ | ✗ |
+| Kitchen Prep Batches | ✅ | ✗ | ✅ | ✗ | ✗ | ✗ | ✗ |
+| Spot Audits & Variances | ✅ | ✅ | ✅ | ✗ | ✗ | ✗ | ✗ |
+| Loyalty Programs | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Dynamic Pricing | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Analytics & Stock Valuation | ✅ | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Fraud Control / Audit Log | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Page Manager | ✅ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Take & manage orders | ✅ | ✗ | ✗ | ✅ | ✅ (view/update own) | ✅ (view/update own) | ✅ (view) |
+| Process bills | ✅ | ✗ | ✗ | ✅ | ✗ | ✗ | ✅ |
+| Kitchen queue view | ✅ | ✗ | ✅ | ✗ | ✅ | ✗ | ✗ |
+| Bar queue view | ✅ | ✗ | ✗ | ✗ | ✗ | ✅ | ✗ |
+| Staff Dashboard | ✅ | ✅ | ✅ | ✅ | ✗ | ✗ | ✅ |
 
 ## Role Descriptions
 
 ### Admin
 
-The Admin role has unrestricted access to every section of MesobOrdering. Admins manage the hotel's complete configuration — menus, staff accounts, system settings, loyalty programs, dynamic pricing rules, analytics, and fraud controls. Only users with the Admin role can access routes under `/admin/*`. You should assign this role only to trusted managers or owners.
+The Admin role has unrestricted access to every section of MesobOrdering. Admins manage the hotel's complete configuration — menus, staff accounts, system settings, inventory master data, loyalty programs, dynamic pricing rules, analytics, and fraud controls. Only users with the Admin role can access routes under `/admin/*`.
+
+### Storekeeper
+
+The Storekeeper manages physical stock receiving (Goods Receipt Notes GRN), supplier Purchase Orders (PO), packaging conversions, inter-location dispatches, and warehouse spot audits. Storekeepers access inventory operations under `/admin/inventory` or `/inventory/receiving`.
+
+### Head Chef
+
+The Head Chef manages kitchen preparation batches (Injera baking, butchery splits, kibbeh clarification), recipe versioning, kitchen transfer requests, and food stock spot counts. Accesses prep operations and KDS queue management.
 
 ### Waiter
 
-Waiters handle front-of-house order management. They can take orders at tables, manage active table sessions, and request bills on behalf of guests. Waiters access the platform through `/staff` and can see the Staff Dashboard but do not have visibility into admin-only sections such as the Menu Manager or Analytics.
+Waiters handle front-of-house order management. They can take orders at tables, manage active table sessions, and request bills on behalf of guests. Waiters access the platform through `/staff` and can see the Staff Dashboard.
 
 ### Kitchen Staff
 
-Kitchen Staff focus exclusively on the kitchen queue. They can view incoming food orders, update the status of those orders (for example, marking items as ready), and track what's outstanding. They access the platform at `/staff/kitchen` and do not have access to billing, the Staff Dashboard, or any admin features.
+Kitchen Staff focus exclusively on the kitchen queue. They can view incoming food orders, update the status of those orders (for example, marking items as ready), and track what's outstanding. They access the platform at `/staff/kitchen`.
 
 ### Bar Staff
 
-Bar Staff operate the same way as Kitchen Staff, but for drink orders. They monitor the bar queue, update order statuses for their station, and manage bar-side fulfilment. They access the platform at `/staff/bar` and do not have access to billing, the Staff Dashboard, or admin sections.
+Bar Staff operate the same way as Kitchen Staff, but for drink orders. They monitor the bar queue, update order statuses for their station, and manage bar-side fulfilment. They access the platform at `/staff/bar`.
 
 ### Cashier
 
-Cashiers are responsible for closing out guest bills and processing payments. They can view orders to reconcile what was served, but they cannot take new orders or modify existing ones. Cashiers access the platform at `/staff/bills` and have access to the Staff Dashboard for shift visibility.
+Cashiers are responsible for closing out guest bills, verifying digital payments (TeleBirr, CBE), reconciling shift cash floats (`PosShift`), and applying loyalty rewards. Cashiers access the platform at `/staff/bills`.
 
 ## Changing a Staff Member's Role
 
